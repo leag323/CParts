@@ -5,7 +5,7 @@ app.factory("User", function(){
         this.password = plainObject.password;
         this.firstName = plainObject.firstName;
         this.lastName = plainObject.lastName;
-        this.data = plainObject.data;
+        this.data = plainObject.data;        
     };
 
     return User;

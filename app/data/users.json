@@ -1,9 +1,9 @@
 [
     {
-        "email":"buyer@buyer.com",
+        "email": "buyer@buyer.com",
         "password": "buyer123",
-        "firstName":"Israel",
+        "firstName": "Israel",
         "lastName": "Israeli",
-        "data":"app/data/buyer-catalog.json"
+        "data": "app/data/buyer-catalog.json"
     }
 ]
