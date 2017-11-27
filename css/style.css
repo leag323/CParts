@@ -1,8 +1,9 @@
 /* css File */
-.container > h1 {
+.navbar-home {
+    font-family: 'Oleo Script', cursive;
+    font-size: 20px;
+}
+
+.head-app {
     font-family: 'Oleo Script', cursive;
 }
-/*
-.head-brand {
-    font-family: 'Oleo Script', cursive;
-}*/
