@@ -28,7 +28,7 @@
 				<th>Max. Qty</th>
 				<th>Location</th>
 			</tr>
-			<tr ng-repeat="item in items | filter : filterModel | orderBy: orderProp">			
+			<tr ng-repeat="item in items | filter : filterModel | orderBy: orderProp" ng-dblclick="openItem(item)">			
 				<td>{{item.itemNo}}</td>
 				<td>{{item.itemDesc}}</td>            
 				<td>{{item.itemUom}}</td> 

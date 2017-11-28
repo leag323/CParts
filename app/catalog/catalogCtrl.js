@@ -4,7 +4,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         $location.path("/");
         return;
     }
-    
+
     // Making sure that we are only loading once
     if (items.getAll().length === 0) {
         $scope.items = [];
@@ -40,4 +40,16 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
           return false;
         }
       }
+
+      $scope.openItem = function (item) {        
+        var itemIndex = $scope.items.indexOf(item);        
+        console.log("catalogCtrl #scope.openItem: " + $scope.openItem);
+        $location.path("/item/" + itemIndex)
+    }
+
+    /*
+    $scope.openDetails = function(index) {
+        $location.path("/items/" + index)
+    }
+    */
 });
