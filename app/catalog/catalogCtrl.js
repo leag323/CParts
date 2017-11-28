@@ -8,5 +8,26 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, items) {
         },  function myError(response) {
             console.log("error open file actors.json");
         });
-          
+
+    // Custom filter function
+    $scope.filterModel = function(item) {
+        if ($scope.query == undefined || $scope.query === "") {
+          return true;
+        } 
+        
+        var queryLowerCase = $scope.query.toLowerCase();
+        var itemNo = item.itemNo.toLowerCase();        
+        var itemDesc = item.itemDesc.toLowerCase();        
+        var itemUom = item.itemUom.toLowerCase();      
+        var itemLocation = item.itemLocation.toLowerCase();
+        
+        if (itemNo.includes(queryLowerCase) ||                    
+            itemDesc.includes(queryLowerCase) ||                
+            itemUom.includes(queryLowerCase) ||
+            itemLocation.includes(queryLowerCase)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
 });

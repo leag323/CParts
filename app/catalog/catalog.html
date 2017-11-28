@@ -1,12 +1,13 @@
 <cparts-navbar></cparts-navbar>
 <div class="container">
-<div class="text-center">                                            
-	<h1>Catalog</h1>   		
-</div>
-<div>
+	<div class="text-center">                                            
+		<h1>Catalog</h1>   		
+	</div>
+
+	<div>
         <label for="sear" >Search:</label>	         				
-        <input type="text" id="sear" ng-model="query.itemNo" />																					
-        
+		<input type="text" id="sear" ng-model="query" />																							
+		
         <label for="sell" >Order By:</label>			
         <select id="sell" ng-model="orderProp">		
             <option value="itemNo">Item No.</option>
@@ -15,26 +16,26 @@
         </select>		
 		<br>
         <br>	
-</div>
+	</div>
 
-<div class="table-responsive">
-	<table class="table table-hover">
-		<tr>
-			<th>Item No.</th>
-			<th>Description</th>
-			<th>UOM</th>
-			<th>Min. Qty</th>
-			<th>Max. Qty</th>
-			<th>Location</th>
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<tr>
+				<th>Item No.</th>
+				<th>Description</th>
+				<th>UOM</th>
+				<th>Min. Qty</th>
+				<th>Max. Qty</th>
+				<th>Location</th>
 			</tr>
-		<tr ng-repeat="item in items | filter : query | orderBy: orderProp">			
-			<td>{{item.itemNo}}</td>
-			<td>{{item.itemDesc}}</td>            
-			<td>{{item.itemUom}}</td> 
-			<td>{{item.itemMinQty}}</td> 
-			<td>{{item.itemMaxQty}}</td> 
-			<td>{{item.itemLocation}}</td> 
-		</tr> <!-- end ng-repeat.. -->	
-	</table>
-</div> <!-- end div class="table-responsive" -->
+			<tr ng-repeat="item in items | filter : filterModel | orderBy: orderProp">			
+				<td>{{item.itemNo}}</td>
+				<td>{{item.itemDesc}}</td>            
+				<td>{{item.itemUom}}</td> 
+				<td>{{item.itemMinQty}}</td> 
+				<td>{{item.itemMaxQty}}</td> 
+				<td>{{item.itemLocation}}</td> 
+			</tr> <!-- end ng-repeat.. -->	
+		</table>
+	</div> <!-- end div class="table-responsive" -->
 </div> <!-- end div class="container" -->
