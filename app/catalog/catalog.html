@@ -1,27 +1,26 @@
 <cparts-navbar></cparts-navbar>
 
-<div class="container text-center">                                            
-	<div class="jumbotron">
-		<h1>Manage Catalog</h1>   		
-	</div>			
+<div class="jumbotron text-center">                                            
+	<h1>Catalog</h1>   		
 </div>
 
-<table class="table">
-	<tr>
-		<th>Item No.</th>
-		<th>Description</th>
-		<th>UOM</th>
-		<th>Minimum Qty</th>
-		<th>Maximum Qty</th>
-		<th>Location</th>
-	</tr>
-	<tr ng-repeat="item in items">			
-		<td>{{item.itemNo}}</td>
-		<td>{{item.itemDesc}}</td>            
-		<td>{{item.itemUom}}</td> 
-		<td>{{item.itemMinQty}}</td> 
-		<td>{{item.itemMaxQty}}</td> 
-		<td>{{item.itemLocation}}</td> 
-	</tr> <!-- end ng-repeat.. -->	
-</table>
-</div>   
+<div class="table-responsive">
+	<table class="table table-hover">
+		<tr>
+			<th>Item No.</th>
+			<th>Description</th>
+			<th>UOM</th>
+			<th>Min. Qty</th>
+			<th>Max. Qty</th>
+			<th>Location</th>
+			</tr>
+		<tr ng-repeat="item in items">			
+			<td>{{item.itemNo}}</td>
+			<td>{{item.itemDesc}}</td>            
+			<td>{{item.itemUom}}</td> 
+			<td>{{item.itemMinQty}}</td> 
+			<td>{{item.itemMaxQty}}</td> 
+			<td>{{item.itemLocation}}</td> 
+		</tr> <!-- end ng-repeat.. -->	
+	</table>
+</div> <!-- end div class="table-responsive" -->
