@@ -28,7 +28,7 @@ app.controller("loginCtrl", function($scope, $http, $location, activeUser, User)
     /* searcg $scope.users find user with email+pwd equal to inpuet */
     var getLoggedInUser = function() {
         for (var i = 0; i < $scope.users.length; i++) {
-            console.log("i: " + i + "-" + $scope.users[i].email + "-" + $scope.email + "-" + $scope.users[i].password + "-" + $scope.password);
+            /* console.log("i: " + i + "-" + $scope.users[i].email + "-" + $scope.email + "-" + $scope.users[i].password + "-" + $scope.password); */
             if ($scope.users[i].email === $scope.email && $scope.users[i].password === $scope.password) {
                 console.log("loginCtrl find user in array: " + $scope.users[i]);
                 return $scope.users[i];
