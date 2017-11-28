@@ -14,7 +14,7 @@ app.controller("loginCtrl", function($scope, $http, $location, activeUser, User)
     
     $scope.login = function() {
         var user = getLoggedInUser();
-        console.log("loginCtrl after getLoggedInUser user: " + user);
+        console.log("*** loginCtrl after getLoggedInUser user: " + user);
         if (user != null) {
             activeUser.login(user);
             /*$uibModalInstance.close("Logged-in"); */

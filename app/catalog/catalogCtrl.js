@@ -4,15 +4,20 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         $location.path("/");
         return;
     }
-
-    $http.get("app/data/buyer-catalog.json").then(function mySuccess(response) {
-            console.log("success open file buyer-catalog.json");    
-            $scope.items = [];
+    
+    // Making sure that we are only loading once
+    if (items.getAll().length === 0) {
+        $scope.items = [];
+        $http.get("app/data/buyer-catalog.json").then(function mySuccess(response) {
+            console.log("success open file buyer-catalog.json");                
             items.load(response.data);                           
             $scope.items = items.getAll();                                                   
         },  function myError(response) {
             console.log("error open file actors.json");
         });
+    } else {console.log("catalogCtrl items.getAll().length !=0");
+            $scope.items = item.getAll();
+            };
 
     // Custom filter function
     $scope.filterModel = function(item) {
