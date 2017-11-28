@@ -3,8 +3,9 @@
 <div class="container">
 	<div class="page-header">                                            
 		<h1>Item Details</h1>   		
-		<h2>Item No: {{item.itemNo}}</h2>   				
+		<h2>Item No: {{item.itemNo}}</h2>   			
 	</div>
+	
 	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 		<form class="form-horizontal">
 			<div class="form-group">
@@ -45,9 +46,9 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<div class="pull-right">
-						<button type="summit" class="btn btn-default" >Cancel</button>
-						<button type="summit" class="btn btn-primary" >Update</button>
-						<button type="summit" class="btn btn-danger" >Delete</button>
+						<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+						<button type="button" class="btn btn-primary" ng-click="update()">Update</button>
+						<button type="bitton" class="btn btn-danger" ng-click="remove()">Delete</button>
 					</div>
 				</div>
 			</div>

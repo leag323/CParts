@@ -2,15 +2,16 @@
 app.factory("items", function(Item) {
     var itemsArr = [];
 
-    function getAll() {
+    var getAll = function() {
         return itemsArr;
     }
 
-    function getById(index) {
+    var getById = function(index) {
+        console.log("item service getById: " + itemsArr[index]);
         return itemsArr[index];
     }
 
-    function add(item) {
+    var add = function(item) {
         itemsArr.push(item);
     }
 
@@ -26,7 +27,7 @@ app.factory("items", function(Item) {
         itemsArr.splice(index, 1);
     }
 
-    function load(itemsPlain) {         
+    var load = function (itemsPlain) {         
         for (var i = 0; i < itemsPlain.length; i++) {
             itemsArr.push(new Item(itemsPlain[i]))
         }

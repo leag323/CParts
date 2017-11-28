@@ -1,14 +1,15 @@
 app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUser, items) {
      // If the user is not logged in going back to home screen
+     console.log("************* catalogCtrl 1");
     if (!activeUser.isLoggedIn()) {
         $location.path("/");
         return;
     }
-
+    console.log("************* catalogCtrl 2");
     // Making sure that we are only loading once
+    console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
     if (items.getAll().length === 0) {
-        $scope.items = [];
-        /*$http.get("app/data/buyer-catalog.json").then(function mySuccess(response) {*/           
+        $scope.items = [];                
         $http.get(activeUser.get().data).then(function mySuccess(response) {
             console.log("success open file buyer-catalog.json");                
             items.load(response.data);                           
@@ -17,10 +18,20 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
             console.log("error open file actors.json");
         });
     } else {console.log("catalogCtrl items.getAll().length !=0");
-            $scope.items = item.getAll();
-            };
+            $scope.items = items.getAll();
+            console.log("catalogCtrl after items.getAll()");
+            }
 
+    console.log("************* catalogCtrl 3");
+    $scope.openItem = function (index) {        
+        /*var itemIndex = $scope.items.indexOf(item); */
+        /*console.log("catalogCtrl itemIndex: " + itemIndex); */
+        $location.path("/item/" + index)
+    }
+
+    console.log("************* catalogCtrl 4");
     // Custom filter function
+    /*
     $scope.filterModel = function(item) {
         if ($scope.query == undefined || $scope.query === "") {
           return true;
@@ -40,17 +51,6 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         } else {
           return false;
         }
-      }
-
-      $scope.openItem = function (item) {        
-        var itemIndex = $scope.items.indexOf(item);        
-        console.log("catalogCtrl itemIndex: " + itemIndex);
-        $location.path("/item/" + itemIndex)
-    }
-
-    /*
-    $scope.openDetails = function(index) {
-        $location.path("/items/" + index)
-    }
-    */
+      }         */
+    console.log("************* catalogCtrl 5");    
 });
