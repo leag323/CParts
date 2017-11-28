@@ -5,8 +5,15 @@
 		<h1>Manage Catalog</h1>   
 		<p>ItemNo ItemDesc</p>
 	</div>			
+</div>
 
-	<div ng-repeat="item in itemsArr">			        
-            {{item.itemNo}}        
-    </div> <!-- end div ng-repeat.. -->	
+<ul>
+	<div ng-repeat="item in items">	
+		<li>
+			{{item.itemNo}}  			   
+			{{item.itemDesc}}        
+		</li>		        
+            
+	</div> <!-- end div ng-repeat.. -->	
+</ul>
 </div>   
