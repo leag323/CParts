@@ -4,6 +4,7 @@
         "password": "buyer123",
         "firstName": "Israel",
         "lastName": "Israeli",
-        "data": "app/data/buyer-catalog.json"
+        "role": "buyer",
+        "data": "app/data/buyer-catalog.json"        
     }
 ]
