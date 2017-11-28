@@ -1,7 +1,20 @@
 <cparts-navbar></cparts-navbar>
-
-<div class="jumbotron text-center">                                            
+<div class="container">
+<div class="text-center">                                            
 	<h1>Catalog</h1>   		
+</div>
+<div>
+        <label for="sear" >Search:</label>	         				
+        <input type="text" id="sear" ng-model="query.itemNo" />																					
+        
+        <label for="sell" >Order By:</label>			
+        <select id="sell" ng-model="orderProp">		
+            <option value="itemNo">Item No.</option>
+			<option value="itemDesc">Item Desc</option>			
+			<option value="itemLocation">Item Location</option>			
+        </select>		
+		<br>
+        <br>	
 </div>
 
 <div class="table-responsive">
@@ -14,7 +27,7 @@
 			<th>Max. Qty</th>
 			<th>Location</th>
 			</tr>
-		<tr ng-repeat="item in items">			
+		<tr ng-repeat="item in items | filter : query | orderBy: orderProp">			
 			<td>{{item.itemNo}}</td>
 			<td>{{item.itemDesc}}</td>            
 			<td>{{item.itemUom}}</td> 
@@ -24,3 +37,4 @@
 		</tr> <!-- end ng-repeat.. -->	
 	</table>
 </div> <!-- end div class="table-responsive" -->
+</div> <!-- end div class="container" -->
