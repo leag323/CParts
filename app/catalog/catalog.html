@@ -2,6 +2,11 @@
 
 <div class="container text-center">                                            
 	<div class="jumbotron">
-		<h1>Manage Catalog</h1>        
-	</div>		
+		<h1>Manage Catalog</h1>   
+		<p>ItemNo ItemDesc</p>
+	</div>			
+
+	<div ng-repeat="item in itemsArr">			        
+            {{item.itemNo}}        
+    </div> <!-- end div ng-repeat.. -->	
 </div>   
