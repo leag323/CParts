@@ -1,5 +1,10 @@
-app.controller("catalogCtrl", function($scope, $http, $log, $location, items) {
- 
+app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUser, items) {
+     // If the user is not logged in going back to home screen
+    if (!activeUser.isLoggedIn()) {
+        $location.path("/");
+        return;
+    }
+
     $http.get("app/data/buyer-catalog.json").then(function mySuccess(response) {
             console.log("success open file buyer-catalog.json");    
             $scope.items = [];
