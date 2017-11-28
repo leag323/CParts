@@ -18,7 +18,7 @@ app.controller("loginCtrl", function($scope, $http, $location, activeUser, User)
         if (user != null) {
             activeUser.login(user);
             /*$uibModalInstance.close("Logged-in"); */
-            $location.path("/po")
+            $location.path("/main")
         } else {
             $scope.failedAttempt = true;
         }
