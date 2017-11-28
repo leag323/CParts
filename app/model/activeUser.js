@@ -2,6 +2,7 @@
 app.factory("activeUser", function(User){
     var user = null;
 
+    /*return true (user is loging) or false (user is not login)*/
     var isLoggedIn = function() {
         return user ? true : false;
     };

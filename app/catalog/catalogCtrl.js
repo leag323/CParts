@@ -8,7 +8,8 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
     // Making sure that we are only loading once
     if (items.getAll().length === 0) {
         $scope.items = [];
-        $http.get("app/data/buyer-catalog.json").then(function mySuccess(response) {
+        /*$http.get("app/data/buyer-catalog.json").then(function mySuccess(response) {*/           
+        $http.get(activeUser.get().data).then(function mySuccess(response) {
             console.log("success open file buyer-catalog.json");                
             items.load(response.data);                           
             $scope.items = items.getAll();                                                   
