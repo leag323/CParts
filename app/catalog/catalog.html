@@ -2,18 +2,26 @@
 
 <div class="container text-center">                                            
 	<div class="jumbotron">
-		<h1>Manage Catalog</h1>   
-		<p>ItemNo ItemDesc</p>
+		<h1>Manage Catalog</h1>   		
 	</div>			
 </div>
 
-<ul>
-	<div ng-repeat="item in items">	
-		<li>
-			{{item.itemNo}}  			   
-			{{item.itemDesc}}        
-		</li>		        
-            
-	</div> <!-- end div ng-repeat.. -->	
-</ul>
+<table class="table">
+	<tr>
+		<th>Item No.</th>
+		<th>Description</th>
+		<th>UOM</th>
+		<th>Minimum Qty</th>
+		<th>Maximum Qty</th>
+		<th>Location</th>
+	</tr>
+	<tr ng-repeat="item in items">			
+		<td>{{item.itemNo}}</td>
+		<td>{{item.itemDesc}}</td>            
+		<td>{{item.itemUom}}</td> 
+		<td>{{item.itemMinQty}}</td> 
+		<td>{{item.itemMaxQty}}</td> 
+		<td>{{item.itemLocation}}</td> 
+	</tr> <!-- end ng-repeat.. -->	
+</table>
 </div>   

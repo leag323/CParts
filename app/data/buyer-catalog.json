@@ -2,17 +2,17 @@
     {
         "itemNo":"B 000100001",
         "itemDesc": "sheet metal screw",
-        "itemUOM":"UOM",
+        "itemUom":"UOM",
         "itemMinQty": 1000,
         "itemMaxQty": 2000,
-        "itemlocation":"A10/001"
+        "itemLocation":"A10/001"
     },
     {
         "itemNo":"B 000100002",
         "itemDesc": "weed screw",
-        "itemUOM":"UOM",
+        "itemUom":"UOM",
         "itemMinQty": 500,
         "itemMaxQty": 1200,
-        "itemlocation":"A10/020"
+        "itemLocation":"A10/020"
     }
 ]
