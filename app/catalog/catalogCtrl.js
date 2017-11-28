@@ -44,7 +44,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
 
       $scope.openItem = function (item) {        
         var itemIndex = $scope.items.indexOf(item);        
-        console.log("catalogCtrl #scope.openItem: " + $scope.openItem);
+        console.log("catalogCtrl itemIndex: " + itemIndex);
         $location.path("/item/" + itemIndex)
     }
 
