@@ -8,12 +8,12 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
     $scope.item = new Item({});
 
     $scope.cancel = function () {
-        $location.path("/catalog");
+        $location.path("/main");
     }
 
     $scope.create = function () {
         items.add($scope.item);
-        $location.path("/catalog");
+        $location.path("/main");
     }
 
   });

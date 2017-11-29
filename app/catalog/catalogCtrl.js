@@ -8,7 +8,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
             
     // Making sure that we are only loading once
     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
-    //if (items.getAll().length === 0) {
+    if (items.getAll().length === 0) {
         $scope.items = [];                
         $http.get(activeUser.get().data).then(function mySuccess(response) {
             console.log("success open file buyer-catalog.json");                
@@ -17,12 +17,11 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         },  function myError(response) {
             console.log("error open file actors.json");
         });
-        /*
+    
     } else {console.log("catalogCtrl items.getAll().length !=0");
             $scope.items = items.getAll();
             console.log("catalogCtrl after items.getAll()");
-            }
-            */
+            }    
     
     $scope.openItem = function (index) {        
         /*var itemIndex = $scope.items.indexOf(item); */
