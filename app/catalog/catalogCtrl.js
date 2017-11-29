@@ -1,11 +1,12 @@
 app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUser, items) {
      // If the user is not logged in going back to home screen
-     console.log("************* catalogCtrl 1");
+     console.log("start catalogCtrl ");
     if (!activeUser.isLoggedIn()) {
         $location.path("/");
         return;
     }
-    console.log("************* catalogCtrl 2");
+    
+        
     // Making sure that we are only loading once
     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
     if (items.getAll().length === 0) {
@@ -21,15 +22,13 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
             $scope.items = items.getAll();
             console.log("catalogCtrl after items.getAll()");
             }
-
-    console.log("************* catalogCtrl 3");
+    
     $scope.openItem = function (index) {        
         /*var itemIndex = $scope.items.indexOf(item); */
         /*console.log("catalogCtrl itemIndex: " + itemIndex); */
         $location.path("/item/" + index)
     }
 
-    console.log("************* catalogCtrl 4");
     // Custom filter function
    
     $scope.filterModel = function(item) {
@@ -52,5 +51,4 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
           return false;
         }
       }        
-    console.log("************* catalogCtrl 5");    
 });

@@ -14,6 +14,14 @@
         "lastName": "Israeli",
         "role": "stock",
         "data": "app/data/stock-catalog.json"        
+    },
+    {
+        "email": "avi@avi.com",
+        "password": "wip123",
+        "firstName": "Shon",
+        "lastName": "Israeli",
+        "role": "wip",
+        "data": "app/data/stock-catalog.json"        
     }
     
 ]

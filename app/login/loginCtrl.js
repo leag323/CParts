@@ -14,7 +14,7 @@ app.controller("loginCtrl", function($scope, $http, $location, activeUser, User)
     
     $scope.login = function() {
         var user = getLoggedInUser();
-        console.log("*** loginCtrl after getLoggedInUser user: " + user);
+        console.log("*** loginCtrl after getLoggedInUser role: " + user.role);
         if (user != null) {
             activeUser.login(user);
             /*$uibModalInstance.close("Logged-in"); */
@@ -37,8 +37,10 @@ app.controller("loginCtrl", function($scope, $http, $location, activeUser, User)
         return null;
     }
 
+    /*
     $scope.dismiss = function () {
         $uibModalInstance.close("User dismissed");
     }
+    */
 
   });
