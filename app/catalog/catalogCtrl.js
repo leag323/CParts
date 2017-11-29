@@ -29,8 +29,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         $location.path("/item/" + index)
     }
 
-    // Custom filter function
-   
+    // Custom filter function   
     $scope.filterModel = function(item) {
         if ($scope.query == undefined || $scope.query === "") {
           return true;

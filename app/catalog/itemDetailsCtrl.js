@@ -20,8 +20,14 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
 
     $scope.update = function() {
         /* window.alert("cat not update"); */
-        items.update($routeParams.index, $scope.item);
-        $location.path("/catalog");
+        console.log($scope.item.itemNo + " " + $scope.item.itemMinQty + " " + $scope.item.itemMaxQty);        
+        if ($scope.item.itemMinQty > $scope.item.itemMaxQty){
+            window.alert("Maximum Qty must be great than Minimum Qty ");
+        } else {
+                items.update($routeParams.index, $scope.item);
+                $location.path("/catalog");
+        }
+        
     }
 
     $scope.remove = function() {

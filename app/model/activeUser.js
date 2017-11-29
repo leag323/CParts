@@ -3,8 +3,13 @@ app.factory("activeUser", function(User){
     var user = null;
 
     /*return true (user is loging) or false (user is not login)*/
-    var isLoggedIn = function() {
+    var isLoggedIn = function() {        
         return user ? true : false;
+    };
+
+    var isBuyer = function() {
+        console.log("activeUser: " + user.role);
+        return (user.role === "buyer") ? true : false;
     };
 
     var login = function(loggedInUser) {
