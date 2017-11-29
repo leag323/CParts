@@ -1,4 +1,4 @@
-app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUser, Item) {
+app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUser, Item, items) {
     // If the user is not logged in going back to home screen  
       if (!activeUser.isLoggedIn()) {
           $location.path("/");
