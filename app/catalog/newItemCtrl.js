@@ -12,8 +12,13 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
     }
 
     $scope.create = function () {
-        items.add($scope.item);
-        $location.path("/main");
+        if ($scope.item.itemMinQty > $scope.item.itemMaxQty){
+            window.alert("Maximum Qty must be great than Minimum Qty ");
+        } else {
+                items.add($scope.item);
+                $location.path("/main");
+        }
+        
     }
 
   });
