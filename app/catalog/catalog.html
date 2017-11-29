@@ -29,10 +29,8 @@
 				<th>Max. Qty</th>
 				<th>Location</th>
 			</tr>
-			<!--
-			<tr ng-repeat="item in items | filter : filterModel | orderBy: orderProp" ng-click="openItem($index)">							
-			-->
-			<tr ng-repeat="item in items | orderBy: orderProp" ng-click="openItem($index)">			
+			
+			<tr ng-repeat="item in items | filter : filterModel | orderBy: orderProp" ng-click="openItem($index)">
 				<td>{{item.itemNo}}</td>
 				<td>{{item.itemDesc}}</td>            
 				<td>{{item.itemUom}}</td> 

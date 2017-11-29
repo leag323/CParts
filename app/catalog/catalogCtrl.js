@@ -31,7 +31,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
 
     console.log("************* catalogCtrl 4");
     // Custom filter function
-    /*
+   
     $scope.filterModel = function(item) {
         if ($scope.query == undefined || $scope.query === "") {
           return true;
@@ -51,6 +51,6 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         } else {
           return false;
         }
-      }         */
+      }        
     console.log("************* catalogCtrl 5");    
 });
