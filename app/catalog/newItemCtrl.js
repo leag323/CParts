@@ -5,7 +5,11 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
           return;
       }  
 
-    $scope.item = new Item({});
+    $scope.isBuyer = function() {
+        return activeUser.isBuyer();
+    };      
+
+    $scope.item = new Item({});                
 
     $scope.cancel = function () {
         $location.path("/main");

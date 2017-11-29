@@ -4,6 +4,11 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
         $location.path("/");
         return;
     }
+
+    $scope.isBuyer = function() {
+        return activeUser.isBuyer();
+    };
+    
     //$scope.item = items.getById($routeParams.index); 
     //$scope.recipe = new Recipe(recipes.get($routeParams.recipeIndex));
 

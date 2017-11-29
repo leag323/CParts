@@ -26,6 +26,7 @@ app.factory("activeUser", function(User){
 
     return {
         isLoggedIn: isLoggedIn,
+        isBuyer: isBuyer,
         login: login,
         logout: logout,
         get: get
