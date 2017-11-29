@@ -1,10 +1,19 @@
 [
     {
-        "email": "buyer@buyer.com",
+        "email": "ben@ben.com",
         "password": "buyer123",
-        "firstName": "Israel",
+        "firstName": "Ben",
         "lastName": "Israeli",
         "role": "buyer",
         "data": "app/data/buyer-catalog.json"        
+    },
+    {
+        "email": "shon@shon.com",
+        "password": "stock123",
+        "firstName": "Shon",
+        "lastName": "Israeli",
+        "role": "stock",
+        "data": "app/data/stock-catalog.json"        
     }
+    
 ]
