@@ -13,11 +13,19 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
     $scope.isBuyer = function() {
         return activeUser.isBuyer();
     };
+    console.log("catalogCtrl 1: " + $scope.isBuyer());
 
     //$scope.isInventory = activeUser.isInventory;
     $scope.isInventory = function() {
         return activeUser.isInventory();
     };
+    console.log("catalogCtrl 2: " + $scope.isInventory());
+
+    //$scope.isWip = activeUser.isWip;
+    $scope.isWip = function() {
+        return activeUser.isWip();
+    };
+    console.log("catalogCtrl 3: " + $scope.isWip());
 
     // Making sure that we are only loading once
     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
@@ -40,7 +48,9 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
     $scope.openItem = function (index) {        
         /*var itemIndex = $scope.items.indexOf(item); */
         /*console.log("catalogCtrl itemIndex: " + itemIndex); */
-        if (activeUser.isBuyer || activeUser.isInventory) {
+        console.log("****catalogCtrl openItem");        
+        if (!activeUser.isWip()) {
+            console.log("****catalogCtrl openItem true");
             $location.path("/item/" + index)
         }        
     }
