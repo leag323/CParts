@@ -4,12 +4,11 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
           $location.path("/");
           return;
       }  
-    $scope.isBuyer = activeUser.isBuyer();
-    /*
+    //$scope.isBuyer = activeUser.isBuyer();
     $scope.isBuyer = function() {
         return activeUser.isBuyer();
     };      
-    */
+    
     $scope.item = new Item({});                
 
     $scope.cancel = function () {

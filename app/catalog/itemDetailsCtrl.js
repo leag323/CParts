@@ -4,18 +4,22 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
         $location.path("/");
         return;
     }
-    $scope.isBuyer = activeUser.isBuyer();
-    console.log("itemDetailsCtrl $scope.isBuyer: " + $scope.isBuyer);
-
-    $scope.isInventory = activeUser.isInventory();
-    console.log("itemDetailsCtrl $scope.isInventory: " + $scope.isInventory);
-    $scope.isWip = activeUser.isWip();
-    /*
+    //$scope.isBuyer = activeUser.isBuyer();    
     $scope.isBuyer = function() {
         return activeUser.isBuyer();
     };
-    */
-    
+    //console.log("itemDetailsCtrl $scope.isBuyer: " + $scope.isBuyer);
+   
+    //$scope.isInventory = activeUser.isInventory();
+    console.log("itemDetailsCtrl $scope.isInventory: " + $scope.isInventory);
+    $scope.isInventory = function() {
+        return activeUser.isInventory();
+    };
+    //$scope.isWip = activeUser.isWip();
+    $scope.isWip = function() {
+        return activeUser.isWip();
+    };
+
     //$scope.item = items.getById($routeParams.index); 
     //$scope.recipe = new Recipe(recipes.get($routeParams.recipeIndex));
 

@@ -6,6 +6,16 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         return;
     }        
 
+    //$scope.isBuyer = activeUser.isBuyer();
+    $scope.isBuyer = function() {
+        return activeUser.isBuyer();
+    };
+
+    //$scope.isInventory = activeUser.isInventory();
+    $scope.isInventory = function() {
+        return activeUser.isInventory();
+    };
+
     // Making sure that we are only loading once
     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
     if (items.getAll().length === 0) {
@@ -26,7 +36,9 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
     $scope.openItem = function (index) {        
         /*var itemIndex = $scope.items.indexOf(item); */
         /*console.log("catalogCtrl itemIndex: " + itemIndex); */
-        $location.path("/item/" + index)
+        if (activeUser.isBuyer || activeUser.isInventory) {
+            $location.path("/item/" + index)
+        }        
     }
 
     // Custom filter function   
