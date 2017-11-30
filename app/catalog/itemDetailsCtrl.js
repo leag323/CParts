@@ -9,7 +9,7 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
     if (!activeUser.isLoggedIn()) {
         $location.path("/");
         return;
-    }
+    }    
 
     //$scope.isBuyer = activeUser.isBuyer;    
     $scope.isBuyer = function() {        
@@ -21,6 +21,8 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
         return activeUser.isStorekeeper();
     };      
     
+    $scope.validationError = false;
+    $scope.errorMessage = "";
     // Creating a copy of the item object so changes won't be reflected on the array
 
     $scope.item = new Item(items.getById($routeParams.index));
@@ -35,7 +37,9 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
     $scope.update = function() {        
         console.log($scope.item.itemNo + " " + $scope.item.itemMinQty + " " + $scope.item.itemMaxQty);        
         if ($scope.item.itemMinQty > $scope.item.itemMaxQty){
-            window.alert("Maximum Qty must be great than Minimum Qty ");
+            //window.alert("Maximum Qty must be great than Minimum Qty ");
+            $scope.validationError = true;
+            $scope.errorMessage = "Maximum Qty must be great than Minimum Qty";
         } else {
                 items.update($routeParams.index, $scope.item);
                 $location.path("/catalog");
