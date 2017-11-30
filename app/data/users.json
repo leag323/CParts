@@ -8,20 +8,20 @@
         "data": "app/data/buyer-catalog.json"        
     },
     {
-        "email": "shon@shon.com",
+        "email": "sam@sam.com",
         "password": "stock123",
-        "firstName": "Shon",
+        "firstName": "Sam",
         "lastName": "Israeli",
         "role": "stock",
-        "data": "app/data/stock-catalog.json"        
+        "data": "app/data/buyer-catalog.json"        
     },
     {
         "email": "avi@avi.com",
         "password": "wip123",
-        "firstName": "Shon",
+        "firstName": "Avi",
         "lastName": "Israeli",
         "role": "wip",
-        "data": "app/data/stock-catalog.json"        
+        "data": "app/data/buyer-catalog.json"        
     }
     
 ]
