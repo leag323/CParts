@@ -8,8 +8,18 @@ app.factory("activeUser", function(User){
     };
 
     var isBuyer = function() {
-        console.log("activeUser: " + user.role);
+        console.log("activeUser isBuyer: " + user.role);
         return (user.role === "buyer") ? true : false;
+    };
+
+    var isInventory = function() {        
+        console.log("activeUser isinventory: " + user.role);
+        return (user.role === "invnetory") ? true : false;
+    };
+
+    var isWip = function() {        
+        console.log("activeUser isWip: " + user.role);
+        return (user.role === "wip") ? true : false;
     };
 
     var login = function(loggedInUser) {
@@ -27,6 +37,8 @@ app.factory("activeUser", function(User){
     return {
         isLoggedIn: isLoggedIn,
         isBuyer: isBuyer,
+        isInventory: isInventory,
+        isWip: isWip,
         login: login,
         logout: logout,
         get: get

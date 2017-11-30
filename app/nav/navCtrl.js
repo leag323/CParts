@@ -1,6 +1,10 @@
 
-app.controller("navCtrl", function($scope, $location, activeUser) {
-    
+app.controller("navCtrl", function($scope, $log, $location, activeUser) {
+    console.log("start navCtrl");
+    $scope.isBuyer = activeUser.isBuyer();
+    //$scope.isInventory = activeUser.isInventory();
+    //$scope.isWip = activeUser.isWip();
+
     /*
     $scope.isActive = function(path) {
         return $location.path().includes(path);

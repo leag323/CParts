@@ -9,10 +9,10 @@
     },
     {
         "email": "sam@sam.com",
-        "password": "stock123",
+        "password": "inv123",
         "firstName": "Sam",
         "lastName": "Israeli",
-        "role": "stock",
+        "role": "inventory",
         "data": "app/data/buyer-catalog.json"        
     },
     {

@@ -5,6 +5,8 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
         return;
     }
     $scope.isBuyer = activeUser.isBuyer();
+    $scope.isInventory = activeUser.isInventory();
+    $scope.isWip = activeUser.isWip();
     /*
     $scope.isBuyer = function() {
         return activeUser.isBuyer();
