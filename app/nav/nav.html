@@ -1,3 +1,10 @@
+<!-- navigation html
+     we have 3 roles: buyer, inventory, wip 
+     buyer can nabigate to:     Catalog New Item
+     inventory can navigate to: Catalog
+     wip can navigate to:       Catalog
+     
+-->
 <nav class="navbar navbar-inverse" >    
     <div>
         <ul class="nav navbar-nav">
@@ -7,7 +14,7 @@
             <li>
                 <a href="#!/catalog">Catalog</a>
             </li>                
-            <li ng-show="isBuyer">
+            <li ng-show="isBuyer()">
                 <a href="#!/newitem">New Item</a>
             </li>             
             <li>

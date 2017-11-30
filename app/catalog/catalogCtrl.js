@@ -1,3 +1,6 @@
+/*show catalog items 
+  we have 3 roles: buyer, inventory, wip 
+  for role: buyer, inventory enable to get item detail for  */
 app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUser, items) {
      // If the user is not logged in going back to home screen
      console.log("start catalogCtrl ");
@@ -6,12 +9,12 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         return;
     }        
 
-    //$scope.isBuyer = activeUser.isBuyer();
+    //$scope.isBuyer = activeUser.isBuyer;
     $scope.isBuyer = function() {
         return activeUser.isBuyer();
     };
 
-    //$scope.isInventory = activeUser.isInventory();
+    //$scope.isInventory = activeUser.isInventory;
     $scope.isInventory = function() {
         return activeUser.isInventory();
     };
@@ -33,6 +36,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
             console.log("catalogCtrl after items.getAll()");
             }    
     
+    // for role: buyer, inventory enable to open item detail
     $scope.openItem = function (index) {        
         /*var itemIndex = $scope.items.indexOf(item); */
         /*console.log("catalogCtrl itemIndex: " + itemIndex); */
