@@ -1,8 +1,8 @@
 /* show item details   
-  we have 3 roles: buyer, inventory, wip 
+  we have 3 roles: buyer, storeKeeper, wip 
   for role: buyer enable update     item details: desc, uom, min-qty, max-qty  
                   enable delete item
-  for role: inventory enable update item details: location
+  for role: storeKeeper enable update item details: location
 */
 app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams, activeUser, Item, items) {
      // If the user is not logged in going back to home screen
@@ -16,11 +16,10 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
         return activeUser.isBuyer();
     };    
 
-    //$scope.isInventory = activeUser.isInventory;    
-    $scope.isInventory = function() {
-        return activeUser.isInventory();
-    };
-    
+    //$scope.isStoreKeeper = activeUser.isStoreKeeper;    
+    $scope.isStoreKeeper = function() {
+        return activeUser.isStoreKeeper();
+    };    
     
     // Creating a copy of the item object so changes won't be reflected on the array
 

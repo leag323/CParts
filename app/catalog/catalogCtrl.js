@@ -1,9 +1,8 @@
 /*show catalog items 
-  we have 3 roles: buyer, inventory, wip 
-  for role: buyer, inventory enable to get item detail for  */
+  we have 3 roles: buyer, storekeeper, wip 
+  for role: buyer, storekeeper enable navigate to item detail */
 app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUser, items) {
-     // If the user is not logged in going back to home screen
-     console.log("start catalogCtrl ");
+     // If the user is not logged in going back to home screen    
     if (!activeUser.isLoggedIn()) {
         $location.path("/");
         return;
@@ -12,20 +11,23 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
     //$scope.isBuyer = activeUser.isBuyer;
     $scope.isBuyer = function() {
         return activeUser.isBuyer();
-    };
-    console.log("catalogCtrl 1: " + $scope.isBuyer());
+    };        
 
-    //$scope.isInventory = activeUser.isInventory;
-    $scope.isInventory = function() {
-        return activeUser.isInventory();
-    };
-    console.log("catalogCtrl 2: " + $scope.isInventory());
+
+    //$scope.isBuyer = activeUser.isBuyer;
+    $scope.isBuyer = function() {
+        return activeUser.isBuyer();
+    };        
+
+    //$scope.isStoreKeeper = activeUser.isStoreKeeper;
+    $scope.isStoreKeeper = function() {
+        return activeUser.isStoreKeeper();
+    };        
 
     //$scope.isWip = activeUser.isWip;
     $scope.isWip = function() {
         return activeUser.isWip();
-    };
-    console.log("catalogCtrl 3: " + $scope.isWip());
+    };        
 
     // Making sure that we are only loading once
     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
@@ -44,10 +46,8 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
             console.log("catalogCtrl after items.getAll()");
             }    
     
-    // for role: buyer, inventory enable to open item detail
-    $scope.openItem = function (index) {        
-        /*var itemIndex = $scope.items.indexOf(item); */
-        /*console.log("catalogCtrl itemIndex: " + itemIndex); */
+    // for role: buyer, storekeepr enable to open item detail for role: wip disabled
+    $scope.openItem = function (index) {                        
         console.log("****catalogCtrl openItem");        
         if (!activeUser.isWip()) {
             console.log("****catalogCtrl openItem true");

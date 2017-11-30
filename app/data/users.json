@@ -12,7 +12,7 @@
         "password": "inv123",
         "firstName": "Sam",
         "lastName": "Israeli",
-        "role": "inventory",
+        "role": "storekeeper",
         "data": "app/data/buyer-catalog.json"        
     },
     {

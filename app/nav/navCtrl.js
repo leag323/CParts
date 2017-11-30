@@ -1,5 +1,5 @@
-/* navigation controller
-   we have 3 roles: buyer, inventory, wip 
+/* navigation controller   
+   we have 3 roles: buyer, storeKeeper, wip 
 */
 
 app.controller("navCtrl", function($scope, $log, $location, activeUser) {
@@ -17,9 +17,6 @@ app.controller("navCtrl", function($scope, $log, $location, activeUser) {
         return activeUser.isBuyer();
     };
     console.log("3 navCtrl isBuer: " + $scope.isBuyer());    
-
-    //$scope.isInventory = activeUser.isInventory();    
-    //console.log("isInventory: " + $scope.isInventory );
 
     /*
     $scope.isActive = function(path) {

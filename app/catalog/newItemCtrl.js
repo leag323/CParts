@@ -1,5 +1,5 @@
 /* create new item
-   we have 3 roles: buyer, inventory, wip 
+   we have 3 roles: buyer, storeKeeper, wip 
    only buyer can create item but can not update item location
 */
 app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUser, Item, items) {

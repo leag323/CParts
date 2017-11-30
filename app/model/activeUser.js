@@ -7,14 +7,12 @@ app.factory("activeUser", function(User){
         return user ? true : false;
     };
 
-    var isBuyer = function() {
-        //console.log("activeUser isBuyer: " + user.role);
+    var isBuyer = function() {        
         return (user.role === "buyer") ? true : false;
     };
 
-    var isInventory = function() {        
-        //console.log("activeUser isInventory: " + user.role);
-        return (user.role === "invnetory") ? true : false;
+    var isStorekeeper = function() {                
+        return (user.role === "storekeeper") ? true : false;
     };
 
     var isWip = function() {        
@@ -37,7 +35,7 @@ app.factory("activeUser", function(User){
     return {
         isLoggedIn: isLoggedIn,
         isBuyer: isBuyer,
-        isInventory: isInventory,
+        isStorekeeper: isStorekeeper,
         isWip: isWip,
         login: login,
         logout: logout,
