@@ -52,16 +52,18 @@
 						<input type="text" class="form-control" id="location" placeholder="Enter Location" ng-model="item.itemLocation">
 					</div>
 			</div>
-			  
-			<div class="form-group">
+			<!-- buttons for buyer -->  
+			<div class="form-group" ng-show="isBuyer">
 				<div class="col-sm-offset-2 col-sm-10">
 					<div class="pull-right">
 						<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
 						<button type="button" class="btn btn-success" ng-click="update()">Update</button>
 						<button type="button" class="btn btn-danger" ng-click="remove()">Delete</button>
-					</div>
-				</div>
-			</div>
+					</div> <!-- end div class="pull-right" -->
+				</div> <!-- end div class="col-sm-offset-2 col-sm-10" -->
+			</div> <!-- end div class="form-group" -->
+
+			<!-- buttons for inventory -->  			
 		</form>
 	</div> <!-- end class="colcs-12..." -->
 </div>
