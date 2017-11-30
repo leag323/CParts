@@ -12,6 +12,11 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
     $scope.isBuyer = function() {
         return activeUser.isBuyer();
     };      
+
+    //$scope.isStorekeeper = activeUser.isStorekeeper;
+    $scope.isStorekeeper = function() {
+        return activeUser.isStorekeeper();
+    }; 
     
     $scope.item = new Item({});                
 

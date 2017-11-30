@@ -1,5 +1,5 @@
 /* navigation controller   
-   we have 3 roles: buyer, storeKeeper, wip 
+   we have 3 roles: buyer, storekeeper, wip 
 */
 
 app.controller("navCtrl", function($scope, $log, $location, activeUser) {
@@ -7,12 +7,9 @@ app.controller("navCtrl", function($scope, $log, $location, activeUser) {
 
     $scope.isLoggedIn = function() {
         return activeUser.isLoggedIn();
-    };
-    console.log("navCtrl 1: " + $scope.isLoggedIn);
-    console.log("navCtrl 2: " + $scope.isLoggedIn());
+    };    
 
     //$scope.isBuyer = activeUser.isBuyer;    
-
     $scope.isBuyer = function() {
         return activeUser.isBuyer();
     };

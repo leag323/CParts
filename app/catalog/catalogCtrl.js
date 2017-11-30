@@ -16,11 +16,13 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
 
     //$scope.isBuyer = activeUser.isBuyer;
     $scope.isBuyer = function() {
+        console.log("****** catalogCtrljs: isBuyer: " + activeUser.isBuyer());
         return activeUser.isBuyer();
-    };        
+    };            
 
     //$scope.isStoreKeeper = activeUser.isStoreKeeper;
-    $scope.isStoreKeeper = function() {
+    $scope.is = function() {
+        console.log("======= catalogCtrljs:: " + activeUser.is());
         return activeUser.isStoreKeeper();
     };        
 

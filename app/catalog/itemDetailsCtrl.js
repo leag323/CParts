@@ -12,14 +12,14 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
     }
 
     //$scope.isBuyer = activeUser.isBuyer;    
-    $scope.isBuyer = function() {
+    $scope.isBuyer = function() {        
         return activeUser.isBuyer();
     };    
 
-    //$scope.isStoreKeeper = activeUser.isStoreKeeper;    
-    $scope.isStoreKeeper = function() {
-        return activeUser.isStoreKeeper();
-    };    
+    //$scope.isStoreKeeper = activeUser.isStoreKeeper;        
+    $scope.isStorekeeper = function() {        
+        return activeUser.isStorekeeper();
+    };      
     
     // Creating a copy of the item object so changes won't be reflected on the array
 
