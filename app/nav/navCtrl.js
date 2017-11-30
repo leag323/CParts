@@ -2,8 +2,10 @@
 app.controller("navCtrl", function($scope, $log, $location, activeUser) {
     console.log("start navCtrl");
     $scope.isBuyer = activeUser.isBuyer();
-    //$scope.isInventory = activeUser.isInventory();
-    //$scope.isWip = activeUser.isWip();
+    console.log("isBuer: " + $scope.isBuyer );
+
+    //$scope.isInventory = activeUser.isInventory();    
+    //console.log("isInventory: " + $scope.isInventory );
 
     /*
     $scope.isActive = function(path) {

@@ -8,12 +8,12 @@ app.factory("activeUser", function(User){
     };
 
     var isBuyer = function() {
-        console.log("activeUser isBuyer: " + user.role);
+        //console.log("activeUser isBuyer: " + user.role);
         return (user.role === "buyer") ? true : false;
     };
 
     var isInventory = function() {        
-        console.log("activeUser isinventory: " + user.role);
+        //console.log("activeUser isInventory: " + user.role);
         return (user.role === "invnetory") ? true : false;
     };
 
