@@ -7,6 +7,7 @@ app.factory("Item", function(){
         this.itemMinQty = plainObject.itemMinQty;
         this.itemMaxQty = plainObject.itemMaxQty;
         this.itemLocation = plainObject.itemLocation;        
+        this.itemSoh = plainObject.itemSoh;        
     };
 
     return Item;

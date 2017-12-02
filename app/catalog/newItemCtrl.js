@@ -27,7 +27,7 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
     $scope.create = function () {
         if ($scope.item.itemNo === undefined){
             $scope.validationError = true;
-            $scope.errorMessage = "Item Number is required";
+            $scope.errorMessage = "Item Number is required";                    
         } else if ($scope.item.itemDesc === undefined) {
                    $scope.validationError = true;
                    $scope.errorMessage = "Item Description is required";

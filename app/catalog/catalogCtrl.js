@@ -13,11 +13,11 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
     if (items.getAll().length === 0) {
         $scope.items = [];                
         $http.get(activeUser.get().data).then(function mySuccess(response) {
-            console.log("success open file buyer-catalog.json");                
+            console.log("success open file catalog.json");                
             items.load(response.data);                           
             $scope.items = items.getAll();                                                   
         },  function myError(response) {
-            console.log("error open file actors.json");
+            console.log("error open file catalog.json");
         });
     
     } else {console.log("catalogCtrl items.getAll().length !=0");

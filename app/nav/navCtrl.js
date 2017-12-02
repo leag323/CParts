@@ -8,11 +8,7 @@ app.controller("navCtrl", function($scope, $log, $location, activeUser) {
     $scope.isLoggedIn = function() {
         return activeUser.isLoggedIn();
     };    
-
-    //$scope.isBuyer = activeUser.isBuyer;    
-    $scope.isBuyer = function() {
-        return activeUser.isBuyer();
-    };
+    
     /*
     $scope.role = function() {
         return activeUser.role();

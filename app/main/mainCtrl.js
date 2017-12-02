@@ -1,5 +1,4 @@
-app.controller("mainCtrl", function($scope, $http, $log, $location, activeUser) { 
-    console.log("start mainCtrl");    
+app.controller("mainCtrl", function($scope, $http, $log, $location, activeUser) {        
 
     // If the user is not logged in going back to home screen   
     
@@ -7,6 +6,5 @@ app.controller("mainCtrl", function($scope, $http, $log, $location, activeUser) 
         $location.path("/");
         return;
     }          
-
-    console.log("end mainCtrl");
+    
 });

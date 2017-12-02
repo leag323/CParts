@@ -1,4 +1,4 @@
-app.controller("homeCtrl", function($scope, $http, $log, $location, activeUser) {
+app.controller("homeCtrl", function($scope, $http, $log, $location) {
      
   });
   
