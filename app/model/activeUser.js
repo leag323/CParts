@@ -20,6 +20,11 @@ app.factory("activeUser", function(User){
         return (user.role === "wip") ? true : false;
     };
 
+
+    var userRole = function() {                
+        return user.role;
+    };
+
     var login = function(loggedInUser) {
         user = loggedInUser;
     };
@@ -36,7 +41,8 @@ app.factory("activeUser", function(User){
         isLoggedIn: isLoggedIn,
         isBuyer: isBuyer,
         isStorekeeper : isStorekeeper ,
-        isWip: isWip,        
+        isWip: isWip,   
+        userRole: userRole,     
         login: login,
         logout: logout,
         get: get

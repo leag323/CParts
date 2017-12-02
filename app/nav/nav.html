@@ -20,13 +20,16 @@
             <li>
                     <a href="#!/soh">Stock On Hand</a>
             </li>            
+            <li ng-show="isStorekeeper()">
+                <a href="#!/issue">Issue Transaction</a>
+            </li> 
             <li>
                 <a href="#!/po">Purchase Orders</a>
             </li>  
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li ng-show="isLoggedIn()">
-                <a>Role: </a>
+                <a>Role: {{userRole()}}</a>
             </li>
             <li ng-hide="isLoggedIn()">
                 <a href="#">Login</a>

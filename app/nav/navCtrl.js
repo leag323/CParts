@@ -8,12 +8,14 @@ app.controller("navCtrl", function($scope, $log, $location, activeUser) {
     $scope.isLoggedIn = function() {
         return activeUser.isLoggedIn();
     };    
+
+    $scope.userRole = "xxx";
+    if (activeUser.isLoggedIn()) {
+        $scope.userRole = function() {
+            return activeUser.userRole();
+    }}
     
     /*
-    $scope.role = function() {
-        return activeUser.role();
-    };
-    
     $scope.userLoggedIn = function() {
        return activeUser.get();
        console.log("navCtrl user: " + user);
