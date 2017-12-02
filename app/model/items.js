@@ -11,6 +11,11 @@ app.factory("items", function(Item) {
         return itemsArr[index];
     }
 
+    var getByValue = function(value) {
+        console.log("item service getByValue: " + value);
+        return itemsArr.indexOf(value);
+    }
+
     var add = function(item) {
         itemsArr.push(item);
     }
@@ -36,6 +41,7 @@ app.factory("items", function(Item) {
     return {
         getAll: getAll,
         getById: getById,
+        getByValue: getByValue,
         add: add,
         update: update,
         removeAll: removeAll,

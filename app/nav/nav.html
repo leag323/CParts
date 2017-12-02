@@ -22,6 +22,9 @@
             </li>  
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <li ng-show="isLoggedIn()">
+                <a>Role: </a>
+            </li>
             <li ng-hide="isLoggedIn()">
                 <a href="#">Login</a>
             </li>

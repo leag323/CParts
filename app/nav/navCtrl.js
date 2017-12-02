@@ -13,16 +13,14 @@ app.controller("navCtrl", function($scope, $log, $location, activeUser) {
     $scope.isBuyer = function() {
         return activeUser.isBuyer();
     };
-    console.log("3 navCtrl isBuer: " + $scope.isBuyer());    
-
     /*
-    $scope.isActive = function(path) {
-        return $location.path().includes(path);
-    }
-   
+    $scope.role = function() {
+        return activeUser.role();
+    };
     
-
-   $scope.userLoggedIn = function() {
+    $scope.userLoggedIn = function() {
        return activeUser.get();
-   }  */ 
+       console.log("navCtrl user: " + user);
+   };
+   */
 })

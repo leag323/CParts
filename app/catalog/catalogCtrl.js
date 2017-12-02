@@ -8,30 +8,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         return;
     }        
 
-    //$scope.isBuyer = activeUser.isBuyer;
-    $scope.isBuyer = function() {
-        return activeUser.isBuyer();
-    };        
-
-
-    //$scope.isBuyer = activeUser.isBuyer;
-    $scope.isBuyer = function() {
-        console.log("****** catalogCtrljs: isBuyer: " + activeUser.isBuyer());
-        return activeUser.isBuyer();
-    };            
-
-    //$scope.isStoreKeeper = activeUser.isStoreKeeper;
-    $scope.is = function() {
-        console.log("======= catalogCtrljs:: " + activeUser.is());
-        return activeUser.isStoreKeeper();
-    };        
-
-    //$scope.isWip = activeUser.isWip;
-    $scope.isWip = function() {
-        return activeUser.isWip();
-    };        
-
-    // Making sure that we are only loading once
+     // Making sure that we are only loading once
     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
     if (items.getAll().length === 0) {
         $scope.items = [];                

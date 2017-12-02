@@ -36,7 +36,7 @@ app.factory("activeUser", function(User){
         isLoggedIn: isLoggedIn,
         isBuyer: isBuyer,
         isStorekeeper : isStorekeeper ,
-        isWip: isWip,
+        isWip: isWip,        
         login: login,
         logout: logout,
         get: get
