@@ -11,7 +11,48 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="itemno">Item No:</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="itemno" placeholder="Enter Item">
+					<select id="itemno" >
+						<option ng-repeat="item in items" value="{{item.itemNo}}">{{item.itemNo}}</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+					<div class="col-sm-2">
+						<strong>
+							Desc   :
+						</strong>						
+					</div>
+					<div class="col-sm-10">
+						{{selectedItem.itemDesc}}
+					</div>
+				</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="desc">Description:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="desc" ng-model=item.itemDesc disabled>
+					</div>
+			</div>
+		
+			<div class="form-group">
+					<label class="control-label col-sm-2" for="uom">UOM:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="uom" ng-model=item.itemUom disabled>							
+					</div>
+			</div>
+		
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="qty">Transaction Qty:</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" id="qty" placeholder="Enter Quantity" ng-model="transaction.transactionQty" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="date">Transaction Date:</label>
+				<div class="col-sm-10">
+					<input type="date" class="form-control" id="date" placeholder="Enter Date" ng-model="transaction.transactionDate" required>
 				</div>
 			</div>
 		</form>
