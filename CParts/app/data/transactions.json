@@ -3,7 +3,7 @@
         "transactionItemNo": "B 000100001",
         "transactionItemDesc": "sheet metal screw",
         "transactionType": "Issue",
-        "transactionDate": "1",
+        "transactionDate": "2017-02-20",
         "transactionUom": "EACH",
         "transactionQty": -50        
     },
@@ -11,7 +11,7 @@
         "transactionItemNo": "B 000100002",
         "transactionItemDesc": "weed screw",
         "transactionType": "Receipt",
-        "transactionDate": "1",
+        "transactionDate": "2017-11-19",
         "transactionUom": "EACH",
         "transactionQty": 100
     }
