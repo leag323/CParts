@@ -5,9 +5,10 @@ app.factory("User", function(){
         this.password = plainObject.password;
         this.firstName = plainObject.firstName;
         this.lastName = plainObject.lastName;
-        this.role = plainObject.role;
-        console.log("service: User role: " + this.role);
+        this.role = plainObject.role;        
         this.catalogData = plainObject.catalogData;        
+        this.transactionsData = plainObject.transactionsData;        
+        console.log("service: User role: " + this.transactionsData);
     };
 
     return User;

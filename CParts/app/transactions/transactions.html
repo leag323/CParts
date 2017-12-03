@@ -1,0 +1,29 @@
+<cparts-navbar></cparts-navbar>
+
+<div class="container">                                            		
+	<div class="page-header">
+		<h1>View Transactions</h1>        			
+	</div>
+
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<tr>
+				<th>Item No.</th>
+				<th>Description</th>
+				<th>Transaction UOM</th>
+				<th>Transaction Type</th>
+				<th>Transaction Date</th>
+				<th>Transaction Qty</th>				
+			</tr>
+			
+			<tr ng-repeat="tran in transactions">
+				<td>{{tran.transactionItemNo}}</td>	
+				<td>{{tran.transactionItemDesc}}</td>	
+				<td>{{tran.transactionUom}}</td>	
+				<td>{{tran.transactionType}}</td>
+				<td>{{tran.transactionDate}}</td>	
+				<td>{{tran.transactionQty}}</td>
+			</tr> <!-- end ng-repeat.. -->	
+		</table>
+	</div> <!-- end div class="table-responsive" -->
+</div>   
