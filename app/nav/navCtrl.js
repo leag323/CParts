@@ -9,12 +9,27 @@ app.controller("navCtrl", function($scope, $log, $location, activeUser) {
         return activeUser.isLoggedIn();
     };    
 
-    $scope.userRole = "xxx";
+     //$scope.isBuyer = activeUser.isBuyer;    
+     $scope.isBuyer = function() {        
+        return activeUser.isBuyer();
+    }; 
+
+    //$scope.isStoreKeeper = activeUser.isStoreKeeper;        
+    $scope.isStorekeeper = function() {        
+        return activeUser.isStorekeeper();
+    };      
+    
+    $scope.userRole = function() {
+        return activeUser.userRole();
+    };
+
+
+    /*
     if (activeUser.isLoggedIn()) {
         $scope.userRole = function() {
             return activeUser.userRole();
     }}
-    
+    */
     /*
     $scope.userLoggedIn = function() {
        return activeUser.get();
