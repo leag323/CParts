@@ -1,0 +1,18 @@
+[
+    {
+        "itemNo": "B 000100001",
+        "itemDesc": "sheet metal screw",
+        "transactionType": "Issue",
+        "transactionDate": "1",
+        "itemUom": "EACH",
+        "transactionQty": -50        
+    },
+    {
+        "itemNo": "B 000100002",
+        "itemDesc": "weed screw",
+        "transactionType": "Receipt",
+        "transactionDate": "1",
+        "itemUom": "EACH",
+        "transactionQty": 100
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "email": "ben@ben.com",
+        "password": "buyer123",
+        "firstName": "Ben",
+        "lastName": "Israeli",
+        "role": "buyer",
+        "data": "app/data/catalog.json"        
+    },
+    {
+        "email": "sam@sam.com",
+        "password": "inv123",
+        "firstName": "Sam",
+        "lastName": "Israeli",
+        "role": "storekeeper",
+        "data": "app/data/catalog.json"        
+    },
+    {
+        "email": "avi@avi.com",
+        "password": "wip123",
+        "firstName": "Avi",
+        "lastName": "Israeli",
+        "role": "wip",
+        "data": "app/data/catalog.json"        
+    }
+    
+]
