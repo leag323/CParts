@@ -5,7 +5,7 @@
         "firstName": "Ben",
         "lastName": "Israeli",
         "role": "buyer",
-        "data": "app/data/catalog.json"        
+        "catalogData": "app/data/catalog.json"        
     },
     {
         "email": "sam@sam.com",
@@ -13,7 +13,7 @@
         "firstName": "Sam",
         "lastName": "Israeli",
         "role": "storekeeper",
-        "data": "app/data/catalog.json"        
+        "catalogData": "app/data/catalog.json"        
     },
     {
         "email": "avi@avi.com",
@@ -21,7 +21,7 @@
         "firstName": "Avi",
         "lastName": "Israeli",
         "role": "wip",
-        "data": "app/data/catalog.json"        
+        "catalogData": "app/data/catalog.json"        
     }
     
 ]

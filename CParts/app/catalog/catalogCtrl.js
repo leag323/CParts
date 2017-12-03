@@ -12,7 +12,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
     if (items.getAll().length === 0) {
         $scope.items = [];                
-        $http.get(activeUser.get().data).then(function mySuccess(response) {
+        $http.get(activeUser.get().catalogData).then(function mySuccess(response) {
             console.log("success open file catalog.json");                
             items.load(response.data);                           
             $scope.items = items.getAll();                                                   

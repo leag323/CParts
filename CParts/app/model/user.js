@@ -7,7 +7,7 @@ app.factory("User", function(){
         this.lastName = plainObject.lastName;
         this.role = plainObject.role;
         console.log("service: User role: " + this.role);
-        this.data = plainObject.data;        
+        this.catalogData = plainObject.catalogData;        
     };
 
     return User;

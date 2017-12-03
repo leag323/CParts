@@ -40,7 +40,7 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
         } else if ($scope.item.itemMaxQty === undefined) {
                     $scope.validationError = true;
                     $scope.errorMessage = "Item Maximum Quantity is required";
-        } else if ($scope.item.itemMinQty > $scope.item.itemMaxQty) {
+        } else if ($scope.item.itemMinQty >= $scope.item.itemMaxQty) {
                    $scope.validationError = true;
                    $scope.errorMessage = "Maximum Qty must be great than Minimum Qty";        
         } else {
