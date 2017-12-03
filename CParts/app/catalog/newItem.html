@@ -71,9 +71,13 @@
 </div>
 
 <div class="container">
+    <div class="alert alert-success" ng-show="validationCreate">
+		<strong>Success!</strong>
+		{{message}}
+    </div>	    
     
-<div class="alert alert-danger" ng-show="validationError">
+    <div class="alert alert-danger" ng-show="validationError">
       <strong>Error!</strong>
       {{errorMessage}}
-</div>
+    </div>
 </div>
