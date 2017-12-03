@@ -22,7 +22,7 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
     $scope.errorMessage = "";
     $scope.validationCreate = false;
     $scope.message = "";
-    $scope.item = new Item({});                
+    $scope.item = new Item({});                    
 
     $scope.cancel = function () {
         $location.path("/main");

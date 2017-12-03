@@ -6,13 +6,11 @@ app.factory("items", function(Item) {
         return itemsArr;
     }
 
-    var getById = function(index) {
-        console.log("item service getById: " + itemsArr[index]);
+    var getById = function(index) {        
         return itemsArr[index];
     }
 
-    var getByValue = function(value) {
-        console.log("item service getByValue: " + value);
+    var getByValue = function(value) {        
         return itemsArr.indexOf(value);
     }
 

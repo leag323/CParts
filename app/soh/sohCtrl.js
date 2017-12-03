@@ -5,11 +5,10 @@ app.controller("sohCtrl", function($scope, $http, $log, $location, activeUser, i
         return;
     }  
 
-     // Making sure that we are only loading once
-     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
+     // Making sure that we are only loading once     
      if (items.getAll().length === 0) {
-         $scope.items = [];                
-         $http.get(activeUser.get().data).then(function mySuccess(response) {
+         $scope.items = [];                          
+         $http.get(activeUser.get().catalogData).then(function mySuccess(response) {
              console.log("success open file catalog.json");                
              items.load(response.data);                           
              $scope.items = items.getAll();                                                   

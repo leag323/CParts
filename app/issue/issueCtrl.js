@@ -1,4 +1,4 @@
-app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser, items) {
+app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser, items, Transaction, transactions) {
   // If the user is not logged in going back to home screen  
     if (!activeUser.isLoggedIn()) {
         $location.path("/");
@@ -28,5 +28,38 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
         //console.log("issueCtrl 1  itemDesc: " + items.getById(index).itemDesc);
         //$scope.itemUom = items.getById(index).itemUom;
         //console.log("issueCtrl 1  itemUom: " + items.getById(index).itemUom);
-    //}            
+    //}   
+
+    $scope.validationError = false;      
+    $scope.errorMessage = "";
+    $scope.validationCreate = false;
+    $scope.message = "";
+    $scope.transaction = new Transaction({});                
+    
+
+    //$scope.item = items.getById(items.getByvalue($scope.selectedItem));    
+
+    $scope.cancel = function () {
+        $location.path("/main");
+    }
+
+    $scope.create = function () {        
+        if ($scope.transaction.transactionQty === undefined){
+            $scope.validationError = true;
+            $scope.errorMessage = "Item Number is required";  
+            $scope.validationCreate = false;                  
+        } else if ($scope.transaction.transactionQty <= 0) {
+                   $scope.validationError = true;
+                   $scope.errorMessage = "in issue transaction quantity must be great than 0";
+                   $scope.validationCreate = false;                                       
+        } else {
+                //transactions.add($scope.transaction);
+                $scope.validationCreate = true;  
+                $scope.message = "issue transaction has been created"
+                $scope.validationError = false;    
+                $scope.errorMessage = "";
+                //$location.path("/main");
+        }
+        
+    }
 });

@@ -8,10 +8,10 @@
 	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 		<form class="form-horizontal">
 			
-			<div class="form-group">
+			<div class="form-group"	>
 				<label class="control-label col-sm-2" for="itemno">Item No:</label>
 				<div class="col-sm-10">
-					<select id="itemno" >
+					<select id="itemno" ng-model="selectedItem">
 						<option ng-repeat="item in items" value="{{item.itemNo}}">{{item.itemNo}}</option>
 					</select>
 				</div>
@@ -24,21 +24,21 @@
 						</strong>						
 					</div>
 					<div class="col-sm-10">
-						{{selectedItem.itemDesc}}
+						{{selectedItem}} {{items.getByValue(selectedItem)}}
 					</div>
 				</div>
 
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="desc">Description:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="desc" ng-model=item.itemDesc disabled>
+						<input type="text" class="form-control" id="desc" ng-model="selectedItem" disabled>
 					</div>
 			</div>
 		
 			<div class="form-group">
 					<label class="control-label col-sm-2" for="uom">UOM:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="uom" ng-model=item.itemUom disabled>							
+						<input type="text" class="form-control" id="uom" ng-model="selectedItem" disabled>							
 					</div>
 			</div>
 		
@@ -55,6 +55,28 @@
 					<input type="date" class="form-control" id="date" placeholder="Enter Date" ng-model="transaction.transactionDate" required>
 				</div>
 			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<div class="pull-right">
+						<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+						<button type="submit" class="btn btn-success" ng-click="create()">Create</button>                        
+					</div>
+				</div>
+			</div>
+
 		</form>
 	</div> <!-- end div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 -->
 </div>   
+
+<div class="container">
+	<div class="alert alert-success" ng-show="validationCreate">
+		<strong>Success!</strong>
+		{{message}}
+	</div>	    
+		
+	<div class="alert alert-danger" ng-show="validationError">
+		<strong>Error!</strong>
+		{{errorMessage}}
+	</div>
+</div>
