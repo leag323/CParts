@@ -5,6 +5,14 @@
 		<h1>View Transactions</h1>        			
 	</div>
 
+	<form class="form-inline">
+		<div class="form-group">
+        	<label for="sear" >Search:</label>	         				
+			<input type="text" id="sear" ng-model="query" />																							
+		</div>
+						
+	</form>	
+
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr>
@@ -16,7 +24,7 @@
 				<th>Transaction Qty</th>				
 			</tr>
 			
-			<tr ng-repeat="tran in transactions">
+			<tr ng-repeat="tran in transactions | filter : filterModel">
 				<td>{{tran.transactionItemNo}}</td>	
 				<td>{{tran.transactionItemDesc}}</td>	
 				<td>{{tran.transactionUom}}</td>	

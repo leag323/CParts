@@ -22,4 +22,20 @@ app.controller("transactionsCtrl", function($scope, $http, $log, $location, acti
              console.log("transactionsCtrl after transactions.getAll()");
              }              
  
+    // Custom filter function   
+    $scope.filterModel = function(transaction) {
+        if ($scope.query == undefined || $scope.query === "") {
+          return true;
+        } 
+        
+        var queryLowerCase = $scope.query.toLowerCase();
+        var ItemNo = transaction.transactionItemNo.toLowerCase();        
+        //var transactionType = transaction.transactionType.toLowerCase();                
+        
+        if (ItemNo.includes(queryLowerCase)) {
+          return true;
+        } else {
+          return false;
+        }
+      }       
 });
