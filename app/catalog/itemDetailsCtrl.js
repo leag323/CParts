@@ -38,7 +38,7 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
 
     $scope.update = function() {        
         console.log($scope.item.itemNo + " " + $scope.item.itemMinQty + " " + $scope.item.itemMaxQty);        
-        if ($scope.item.itemMinQty > $scope.item.itemMaxQty){
+        if ($scope.item.itemMinQty >= $scope.item.itemMaxQty){
             //window.alert("Maximum Qty must be great than Minimum Qty ");
             $scope.validationError = true;
             $scope.errorMessage = "Maximum Qty must be great than Minimum Qty";
