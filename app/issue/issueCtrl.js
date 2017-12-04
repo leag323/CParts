@@ -55,7 +55,9 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
                    $scope.errorMessage = "in issue transaction quantity must be great than 0";
                    $scope.validationCreate = false;                                       
         } else {
-                //transactions.add($scope.transaction);
+                $scope.transaction.transactionType = "Issue";
+                $scope.transaction.transactionItemNo = $scope.selectedItem;
+                transactions.add($scope.transaction);                
                 $scope.validationCreate = true;  
                 $scope.message = "issue transaction has been created"
                 $scope.validationError = false;    
