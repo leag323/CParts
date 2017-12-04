@@ -22,21 +22,12 @@ app.controller("transactionsCtrl", function($scope, $http, $log, $location, acti
              console.log("transactionsCtrl after transactions.getAll()");
     }
 
-    $scope.itemDesc = "";
-    $scope.itemUom = "";
-             
-    $scope.itemDesc = function(transaction) {
-       return items.getByValue(transaction[$routeParams.transactionIndex].transactionItemNo).itemDesc;
-    }
-    
-/*
-    $scope.itemUom = function(transaction) {
-      return items.getByValue(transaction.transactionItemNo).itemUom;
-   }
-   */
-    //$scope.item = items.getByValue($scope.transactions(index).transactionItemNo);
-    //$scope.itemDesc = $scope.item.itemDesc;
-    //$scope.itemUom = $scope.item.itemUom;
+    $scope.selectedItemDesc = "desc";
+    $scope.selectedItemUom = "uom";
+        
+    //$scope.selectedItemDesc = items.getByItemNo($scope.transactions[index].transactionItemNo).itemDesc;
+    //$scope.selectedItemUom = items.getByItemNo($scope.selectedItem).itemUom;
+
 
     // Custom filter function   
     $scope.filterModel = function(transaction) {

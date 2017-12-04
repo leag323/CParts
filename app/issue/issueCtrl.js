@@ -22,21 +22,17 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
              console.log("catalogCtrl after items.getAll()");
              }  
 
-    //$scope.selectItem = function() {
-      //  console.log("issueCtrl 1  " );
-        //$scope.itemDesc = items.getById(index).itemDesc;
-        //console.log("issueCtrl 1  itemDesc: " + items.getById(index).itemDesc);
-        //$scope.itemUom = items.getById(index).itemUom;
-        //console.log("issueCtrl 1  itemUom: " + items.getById(index).itemUom);
-    //}   
+    $scope.selectedItemDesc = "";
+    $scope.selectedItemUom = "";
+
+    $scope.transaction = new Transaction({});                
 
     $scope.validationError = false;      
     $scope.errorMessage = "";
+
     $scope.validationCreate = false;
     $scope.message = "";
-    $scope.transaction = new Transaction({});                
-    $scope.selectedItemDesc = "";
-    $scope.selectedItemUom = "";
+    
 
     $scope.itemSelected = function() {
         $scope.selectedItemDesc = items.getByItemNo($scope.selectedItem).itemDesc;
