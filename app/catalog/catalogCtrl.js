@@ -7,8 +7,10 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
         $location.path("/");
         return;
     }        
-
+    
+    $scope.items = items.getAll();  
      // Making sure that we are only loading once
+     /* move read catalog file to catalog.json
     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
     if (items.getAll().length === 0) {
         $scope.items = [];                
@@ -24,7 +26,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
             $scope.items = items.getAll();
             console.log("catalogCtrl after items.getAll()");
             }    
-    
+    */
     // for role: buyer, storekeepr enable to open item detail for role: wip disabled
     $scope.openItem = function (index) {                        
         console.log("****catalogCtrl openItem");        

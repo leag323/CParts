@@ -10,10 +10,24 @@ app.factory("items", function(Item) {
         return itemsArr[index];
     }
 
+    var getByItemNo = function(itemNo) {
+        for(var i = 0; i < itemsArr.length; i++) {
+            if (itemsArr[i].itemNo === itemNo) {
+                return itemsArr[i];
+            }
+        }
+
+        return null;
+    }
+/*
     var getByValue = function(value) {        
-        return itemsArr.indexOf(value);
+        return itemsArr[itemsArr.indexOf(value)];
     }
 
+    var getIndexOf = function(value) {        
+        return itemsArr.indexOf(value);
+    }
+*/
     var add = function(item) {
         itemsArr.push(item);
     }
@@ -39,11 +53,11 @@ app.factory("items", function(Item) {
     return {
         getAll: getAll,
         getById: getById,
-        getByValue: getByValue,
+        getByItemNo: getByItemNo,        
         add: add,
         update: update,
         removeAll: removeAll,
         removeByID: removeByID,
-        load: load
+        load: load        
     }
 })

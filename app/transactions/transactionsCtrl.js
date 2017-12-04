@@ -1,4 +1,4 @@
-app.controller("transactionsCtrl", function($scope, $http, $log, $location, activeUser, transactions) {
+app.controller("transactionsCtrl", function($scope, $http, $log, $location, activeUser, items, transactions) {
   // If the user is not logged in going back to home screen  
     if (!activeUser.isLoggedIn()) {
         $location.path("/");
@@ -20,8 +20,24 @@ app.controller("transactionsCtrl", function($scope, $http, $log, $location, acti
      } else {console.log("transactionsCtrl transactions.getAll().length !=0");
              $scope.transactions = transactions.getAll();
              console.log("transactionsCtrl after transactions.getAll()");
-             }              
- 
+    }
+
+    $scope.itemDesc = "";
+    $scope.itemUom = "";
+             
+    $scope.itemDesc = function(transaction) {
+       return items.getByValue(transaction[$routeParams.transactionIndex].transactionItemNo).itemDesc;
+    }
+    
+/*
+    $scope.itemUom = function(transaction) {
+      return items.getByValue(transaction.transactionItemNo).itemUom;
+   }
+   */
+    //$scope.item = items.getByValue($scope.transactions(index).transactionItemNo);
+    //$scope.itemDesc = $scope.item.itemDesc;
+    //$scope.itemUom = $scope.item.itemUom;
+
     // Custom filter function   
     $scope.filterModel = function(transaction) {
         if ($scope.query == undefined || $scope.query === "") {

@@ -35,7 +35,13 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
     $scope.validationCreate = false;
     $scope.message = "";
     $scope.transaction = new Transaction({});                
-    
+    $scope.selectedItemDesc = "";
+    $scope.selectedItemUom = "";
+
+    $scope.itemSelected = function() {
+        $scope.selectedItemDesc = items.getByItemNo($scope.selectedItem).itemDesc;
+        $scope.selectedItemUom = items.getByItemNo($scope.selectedItem).itemUom;
+    }
 
     //$scope.item = items.getById(items.getByvalue($scope.selectedItem));    
 

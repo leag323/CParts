@@ -1,13 +1,13 @@
 [
-    {
-        "transactionItemNo": "B 000100001",        
+    {          
         "transactionType": "Issue",
+        "transactionItemNo": "B 000100001",      
         "transactionDate": "2017-02-20",       
         "transactionQty": -50        
     },
-    {
-        "transactionItemNo": "B 000100002",        
+    {             
         "transactionType": "Receipt",
+        "transactionItemNo": "B 000100002",   
         "transactionDate": "2017-11-19",        
         "transactionQty": 100
     }
