@@ -25,7 +25,8 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
     $scope.selectedItemDesc = "";
     $scope.selectedItemUom = "";
     $scope.selectedItemSoh = "";
-
+    $scope.itemIndex  = "";
+   // $scope.newItemSoh = null;
     $scope.transaction = new Transaction({});                
 
     $scope.validationError = false;      
@@ -39,6 +40,13 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
         $scope.selectedItemDesc = items.getByItemNo($scope.selectedItem).itemDesc;
         $scope.selectedItemUom = items.getByItemNo($scope.selectedItem).itemUom;
         $scope.selectedItemSoh = items.getByItemNo($scope.selectedItem).itemSoh;
+        console.log("$scope.selectedItemSoh: " + $scope.selectedItemSoh);
+        $scope.itemIndex = items.getIndexByItemNo($scope.selectedItem);                    
+    }
+
+    $scope.itemIndex = function() {
+        items.getIndexByItemNo($scope.selectedItem);
+        
     }
 
     //$scope.item = items.getById(items.getByvalue($scope.selectedItem));    
@@ -64,7 +72,12 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
                 $scope.transaction.transactionType = "Issue";
                 $scope.transaction.transactionItemNo = $scope.selectedItem;
                 $scope.transaction.transactionQty = $scope.transaction.transactionQty * (-1);
-                transactions.add($scope.transaction);                
+                transactions.add($scope.transaction);  
+                //$scope.newItemSoh = $scope.selectedItemSoh + $scope.transaction.transactionQty;
+                console.log("1 before update $scope:itemIndex " + $scope.itemIndex);
+                console.log("2 before update $scope.selectedItemSoh " + $scope.selectedItemSoh);
+                console.log("3 before update $scope.transaction.transactionQty " + $scope.transaction.transactionQty);                
+                items.updateItemSoh($scope.itemIndex, ($scope.selectedItemSoh + $scope.transaction.transactionQty));
                 $scope.validationCreate = true;  
                 //items.update($routeParams.index, $scope.item);
                 $scope.message = "issue transaction has been created"
