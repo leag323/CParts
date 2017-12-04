@@ -66,6 +66,7 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
                 $scope.transaction.transactionQty = $scope.transaction.transactionQty * (-1);
                 transactions.add($scope.transaction);                
                 $scope.validationCreate = true;  
+                //items.update($routeParams.index, $scope.item);
                 $scope.message = "issue transaction has been created"
                 $scope.validationError = false;    
                 $scope.errorMessage = "";
