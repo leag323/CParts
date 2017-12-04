@@ -1,4 +1,4 @@
-app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser, items, Transaction, transactions) {
+app.controller("receiptCtrl", function($scope, $http, $log, $location, activeUser, items, Transaction, transactions) {
   // If the user is not logged in going back to home screen  
     if (!activeUser.isLoggedIn()) {
         $location.path("/");
@@ -61,16 +61,11 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
             $scope.validationCreate = false;                  
         } else if ($scope.transaction.transactionQty <= 0) {
                    $scope.validationError = true;
-                   $scope.errorMessage = "in issue transaction quantity must be great than 0";
-                   $scope.validationCreate = false;  
-        } else if ($scope.transaction.transactionQty > $scope.selectedItemSoh) {
-                   $scope.validationError = true;
-                   $scope.errorMessage = "issue quantity is great than stock on hand :" + $scope.selectedItemSoh;
-                   $scope.validationCreate = false;  
+                   $scope.errorMessage = "in receipt transaction quantity must be great than 0";
+                   $scope.validationCreate = false;           
         } else {
-                $scope.transaction.transactionType = "Issue";
-                $scope.transaction.transactionItemNo = $scope.selectedItem;
-                $scope.transaction.transactionQty = $scope.transaction.transactionQty * (-1);
+                $scope.transaction.transactionType = "Receipt";
+                $scope.transaction.transactionItemNo = $scope.selectedItem;                
                 transactions.add($scope.transaction);                  
                 console.log("1 before update $scope:itemIndex " + $scope.itemIndex);
                 console.log("2 before update $scope.selectedItemSoh " + $scope.selectedItemSoh);
