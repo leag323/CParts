@@ -57,6 +57,7 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
         } else {
                 $scope.transaction.transactionType = "Issue";
                 $scope.transaction.transactionItemNo = $scope.selectedItem;
+                $scope.transaction.transactionQty = $scope.transaction.transactionQty * (-1);
                 transactions.add($scope.transaction);                
                 $scope.validationCreate = true;  
                 $scope.message = "issue transaction has been created"
