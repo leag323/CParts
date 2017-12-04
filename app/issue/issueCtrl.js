@@ -24,6 +24,7 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
 
     $scope.selectedItemDesc = "";
     $scope.selectedItemUom = "";
+    $scope.selectedItemSoh = "";
 
     $scope.transaction = new Transaction({});                
 
@@ -37,6 +38,7 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
     $scope.itemSelected = function() {
         $scope.selectedItemDesc = items.getByItemNo($scope.selectedItem).itemDesc;
         $scope.selectedItemUom = items.getByItemNo($scope.selectedItem).itemUom;
+        $scope.selectedItemSoh = items.getByItemNo($scope.selectedItem).itemSoh;
     }
 
     //$scope.item = items.getById(items.getByvalue($scope.selectedItem));    
@@ -53,7 +55,11 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
         } else if ($scope.transaction.transactionQty <= 0) {
                    $scope.validationError = true;
                    $scope.errorMessage = "in issue transaction quantity must be great than 0";
-                   $scope.validationCreate = false;                                       
+                   $scope.validationCreate = false;  
+        } else if ($scope.transaction.transactionQty > $scope.selectedItemSoh) {
+                   $scope.validationError = true;
+                   $scope.errorMessage = "issue quantity is great than stock on hand :" + $scope.selectedItemSoh;
+                   $scope.validationCreate = false;  
         } else {
                 $scope.transaction.transactionType = "Issue";
                 $scope.transaction.transactionItemNo = $scope.selectedItem;
