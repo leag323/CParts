@@ -23,17 +23,4 @@ app.controller("navCtrl", function($scope, $log, $location, activeUser) {
         return activeUser.userRole();
     };
 
-
-    /*
-    if (activeUser.isLoggedIn()) {
-        $scope.userRole = function() {
-            return activeUser.userRole();
-    }}
-    */
-    /*
-    $scope.userLoggedIn = function() {
-       return activeUser.get();
-       console.log("navCtrl user: " + user);
-   };
-   */
 })
