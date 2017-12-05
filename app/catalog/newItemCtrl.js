@@ -60,7 +60,7 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
         } else {
                 items.add($scope.item);
                 $scope.validationCreate = true;  
-                $scope.message = "iten has been created"
+                $scope.message = "item: " + $scope.item.itemNo + " has been created";
                 $scope.validationError = false;    
                 $scope.errorMessage = "";
                 $scope.item = {};

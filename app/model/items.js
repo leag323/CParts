@@ -28,21 +28,16 @@ app.factory("items", function(Item) {
         }
     }
 
-    var CheckItemNoExist = function(itemNo) {        
-        console.log("CheckItemNoExist input: " + itemNo);
-        for (var i = 0; i < itemsArr.length; i++) {
-            console.log("CheckItemNoExist i: " + i + " itemsArr[i].itemNo: " + itemsArr[i].itemNo);
-            if (itemsArr[i].itemNo === itemNo) {
-                console.log("checkItemNoExist item was found return true");
+    var CheckItemNoExist = function(itemNo) {                
+        for (var i = 0; i < itemsArr.length; i++) {            
+            if (itemsArr[i].itemNo === itemNo) {                
                 return true;
             }            
-        }
-        console.log("checkItemNoExist item was found return false");
+        }        
         return false;
     }
     
-    var add = function(item) {
-        console.log("*** add ***" + item);
+    var add = function(item) {        
         itemsArr.push(item);
     }
 
