@@ -8,12 +8,13 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
         $location.path("/");
         return;
     }    
-
-    $scope.validationError = false;
+    
     $scope.errorMessage = "";
-    $scope.validationUpdate = false;
     $scope.message = "";
-
+    $scope.selectedItemDesc = "desc";
+    $scope.validationError = false;    
+    $scope.validationUpdate = false;    
+    
     // Creating a copy of the order object so changes won't be reflected on the array
 
     $scope.order = new Order(orders.getById($routeParams.index));
