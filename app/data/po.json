@@ -4,7 +4,7 @@
         "orderItemNo": "B 000100001",
         "orderQty": 1000,      
         "issueQty": 500,       
-        "requiredDate": "2017-11-31",
+        "requiredDate": "2017-11-30",
         "orderStatus": "Partially issued"
     },
     {             
