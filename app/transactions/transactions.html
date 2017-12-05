@@ -37,7 +37,7 @@
 				<td>{{selectedItemUom}}</td>	
 				<td>{{tran.transactionType}}</td>
 				<td>{{tran.transactionDate | date: "dd/MM/yyyy"}}</td>	
-				<td>{{tran.transactionQty}}</td>
+				<td>{{tran.transactionQty | number}}</td>
 			</tr> <!-- end ng-repeat.. -->	
 		</table>
 	</div> <!-- end div class="table-responsive" -->
