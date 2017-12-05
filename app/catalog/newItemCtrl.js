@@ -17,13 +17,13 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
     $scope.isStorekeeper = function() {
         return activeUser.isStorekeeper();
     }; 
-    
-    $scope.validationError = false;      
-    $scope.errorMessage = "";
-    $scope.validationCreate = false;
-    $scope.message = "";
-    $scope.item = new Item({});                    
 
+    $scope.errorMessage = "";
+    $scope.item = new Item({});                    
+    $scope.message = "";
+    $scope.validationCreate = false; /* true show alert-success */
+    $scope.validationError = false;  /* true show alert-danger */     
+                
     $scope.cancel = function () {
         $location.path("/main");
     }
@@ -32,7 +32,11 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
         if ($scope.item.itemNo === undefined){
             $scope.validationError = true;
             $scope.errorMessage = "Item Number is required";  
-            $scope.validationCreate = false;                  
+            $scope.validationCreate = false;    
+        } else if (items.CheckItemNoExist($scope.item.itemNo)) {
+                   $scope.validationError = true;
+                   $scope.errorMessage = "Item Number already exsist";  
+                   $scope.validationCreate = false;    
         } else if ($scope.item.itemDesc === undefined) {
                    $scope.validationError = true;
                    $scope.errorMessage = "Item Description is required";
@@ -59,6 +63,7 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
                 $scope.message = "iten has been created"
                 $scope.validationError = false;    
                 $scope.errorMessage = "";
+                $scope.item = "";
                 //$location.path("/main");
         }
         

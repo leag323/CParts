@@ -27,8 +27,22 @@ app.factory("items", function(Item) {
             }
         }
     }
+
+    var CheckItemNoExist = function(itemNo) {        
+        console.log("CheckItemNoExist input: " + itemNo);
+        for (var i = 0; i < itemsArr.length; i++) {
+            console.log("CheckItemNoExist i: " + i + " itemsArr[i].itemNo: " + itemsArr[i].itemNo);
+            if (itemsArr[i].itemNo === itemNo) {
+                console.log("checkItemNoExist item was found return true");
+                return true;
+            }            
+        }
+        console.log("checkItemNoExist item was found return false");
+        return false;
+    }
     
     var add = function(item) {
+        console.log("*** add ***" + item);
         itemsArr.push(item);
     }
 
@@ -61,7 +75,8 @@ app.factory("items", function(Item) {
         getAll: getAll,
         getById: getById,
         getByItemNo: getByItemNo,  
-        getIndexByItemNo: getIndexByItemNo,      
+        getIndexByItemNo: getIndexByItemNo,   
+        CheckItemNoExist: CheckItemNoExist,   
         add: add,
         update: update,
         updateItemSoh : updateItemSoh,
