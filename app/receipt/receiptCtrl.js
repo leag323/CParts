@@ -21,19 +21,16 @@ app.controller("receiptCtrl", function($scope, $http, $log, $location, activeUse
              $scope.items = items.getAll();
              console.log("catalogCtrl after items.getAll()");
              }  
-
+    $scope.currentDate = new Date();  
+    $scope.errorMessage = "";
+    $scope.itemIndex  = "";   
+    $scope.message = "";
     $scope.selectedItemDesc = "";
     $scope.selectedItemUom = "";
-    $scope.selectedItemSoh = "";
-    $scope.itemIndex  = "";   
+    $scope.selectedItemSoh = "";    
     $scope.transaction = new Transaction({});                
-
-    $scope.validationError = false;      
-    $scope.errorMessage = "";
-
-    $scope.validationCreate = false;
-    $scope.message = "";
-    
+    $scope.validationCreate = false;  /* true show alert-success */
+    $scope.validationError = false;   /* true show alert-danger*/                 
 
     $scope.itemSelected = function() {
         $scope.selectedItemDesc = items.getByItemNo($scope.selectedItem).itemDesc;
@@ -54,15 +51,28 @@ app.controller("receiptCtrl", function($scope, $http, $log, $location, activeUse
         $location.path("/main");
     }
 
-    $scope.create = function () {        
-        if ($scope.transaction.transactionQty === undefined){
+    $scope.create = function () {  
+        $scope.inputDate = new Date($scope.transaction.transactionDate)    
+        if ($scope.selectedItem === undefined){
             $scope.validationError = true;
             $scope.errorMessage = "Item Number is required";  
-            $scope.validationCreate = false;                  
+            $scope.validationCreate = false;       
+        } else if ($scope.transaction.transactionQty === undefined){
+                   $scope.validationError = true;
+                   $scope.errorMessage = "transaction quantity is required";  
+                   $scope.validationCreate = false;                  
         } else if ($scope.transaction.transactionQty <= 0) {
                    $scope.validationError = true;
                    $scope.errorMessage = "in receipt transaction quantity must be great than 0";
-                   $scope.validationCreate = false;           
+                   $scope.validationCreate = false;        
+        } else if ($scope.transaction.transactionDate === undefined) {
+                   $scope.validationError = true;
+                   $scope.errorMessage = "transaction date is required";
+                   $scope.validationCreate = false;    
+        } else if ($scope.inputDate > $scope.currentDate) {
+                   $scope.validationError = true;
+                   $scope.errorMessage = "transaction date can not be in future";
+                   $scope.validationCreate = false;  
         } else {
                 $scope.transaction.transactionType = "Receipt";
                 $scope.transaction.transactionItemNo = $scope.selectedItem;                
