@@ -1,0 +1,18 @@
+[
+    {          
+        "orderNo": "45012005050",
+        "orderItemNo": "B 000100001",
+        "orderQty": 1000,      
+        "issueQty": 500,       
+        "requiredDate": "2017-11-31",
+        "orderStatus": "Partially issued"
+    },
+    {             
+        "orderNo": "45012005505",
+        "orderItemNo": "B 000100002",
+        "orderQty": 1000,      
+        "issueQty": 700,       
+        "requiredDate": "2017-12-30",
+        "orderStatus": "Partially issued"
+    }
+]

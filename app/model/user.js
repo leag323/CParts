@@ -8,6 +8,7 @@ app.factory("User", function(){
         this.role = plainObject.role;        
         this.catalogData = plainObject.catalogData;        
         this.transactionsData = plainObject.transactionsData;        
+        this.poData = plainObject.poData;   
         console.log("service: User role: " + this.transactionsData);
     };
 

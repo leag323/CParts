@@ -45,11 +45,8 @@ app.factory("items", function(Item) {
         itemsArr[index] = item;
     }
 
-    var updateItemSoh = function(index, qty) {
-        console.log("1 items.updateItemSoh index: " + index);
-        console.log("2 items.updateItemSoh Qty: " + qty);
-        itemsArr[index].itemSoh = qty;
-        console.log("3 items.updateItemSoh after upd: " + itemsArr[index].itemSoh);
+    var updateItemSoh = function(index, qty) {                
+        itemsArr[index].itemSoh = qty;        
     }
 
     var removeAll = function() {

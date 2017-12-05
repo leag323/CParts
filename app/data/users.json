@@ -6,7 +6,8 @@
         "lastName": "Israeli",
         "role": "buyer",
         "catalogData": "app/data/catalog.json",
-        "transactionsData": "app/data/transactions.json"        
+        "transactionsData": "app/data/transactions.json",
+        "poData": "app/data/po.json"        
     },
     {
         "email": "sam@sam.com",
@@ -15,7 +16,8 @@
         "lastName": "Israeli",
         "role": "storekeeper",
         "catalogData": "app/data/catalog.json",
-        "transactionsData": "app/data/transactions.json"
+        "transactionsData": "app/data/transactions.json",
+        "poData": "app/data/po.json"
     },
     {
         "email": "avi@avi.com",
@@ -24,7 +26,8 @@
         "lastName": "Israeli",
         "role": "wip",
         "catalogData": "app/data/catalog.json",
-        "transactionsData": "app/data/transactions.json"        
+        "transactionsData": "app/data/transactions.json",
+        "poData": "app/data/po.json"
     }
     
 ]

@@ -4,4 +4,31 @@
 	<div class="page-header">
 		<h1>Purchase Orders</h1>        			
 	</div>
+
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<tr>
+				<th>Order No.</th>
+				<th>Item No.</th>
+				<!--
+				<th>Description</th>
+				<th>Tran. UOM</th>
+				-->
+				<th>Order Qty</th>
+				<th>Issue Qty</th>
+				<th>Required Date</th>				
+				<th>Order Status</th>				
+			</tr>
+			
+			<tr ng-repeat="order in orders">
+				<td>{{order.orderNo}}</td>						
+				<td>{{order.orderItemNo}}</td>
+				<td>{{order.orderQty | number}}</td>
+				<td>{{order.issueQty | number}}</td>
+				<td>{{order.requiredDate | date: "dd/MM/yyyy"}}</td>	
+				<td>{{order.orderStatus}}</td>
+			</tr> <!-- end ng-repeat.. -->	
+		</table>
+	</div> <!-- end div class="table-responsive" -->
+
 </div>   
