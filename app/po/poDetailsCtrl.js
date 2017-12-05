@@ -18,6 +18,7 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
 
     $scope.order = new Order(orders.getById($routeParams.index));
     console.log("poDetailCtrl $routeParams.index: " + $routeParams.index);    
+    console.log("poDetailCtrl $scope.order.orderNo: " + $scope.order.orderNo);    
 
     $scope.cancel = function() {
         console.log("poDetailCtrl cancel");
