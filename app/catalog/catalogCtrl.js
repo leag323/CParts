@@ -28,10 +28,8 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
             }    
     */
     // for role: buyer, storekeepr enable to open item detail for role: wip disabled
-    $scope.openItem = function (index) {                        
-        console.log("****catalogCtrl openItem");        
-        if (!activeUser.isWip()) {
-            console.log("****catalogCtrl openItem true");
+    $scope.openItem = function (index) {                                      
+        if (!activeUser.isWip()) {            
             $location.path("/item/" + index)
         }        
     }
