@@ -64,6 +64,7 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
                 $scope.validationError = false;    
                 $scope.errorMessage = "";
                 $scope.item = {};
+                
                 //$location.path("/main");
         }
         
