@@ -1,10 +1,20 @@
-app.controller("poCtrl", function($scope, $http, $log, $location, activeUser, orders) {
+app.controller("poCtrl", function($scope, $http, $log, $location, activeUser, items, orders) {
   // If the user is not logged in going back to home screen  
     if (!activeUser.isLoggedIn()) {
         $location.path("/");
         return;
     }  
 
+    //$scope.selectedItemDesc = "Desc";
+    //$scope.selectedItemUom = "UOM";
+
+    $scope.selectedItemDesc = function(index) {
+        return items.getByItemNo($scope.orders[index].orderItemNo).itemDesc;
+      };
+  
+    $scope.selectedItemUom = function(index) {
+        return items.getByItemNo($scope.orders[index].orderItemNo).itemUom;
+      };
     // Making sure that we are only loading once     
     if (orders.getAll().length === 0) {
         $scope.orders = [];                

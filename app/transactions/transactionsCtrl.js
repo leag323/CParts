@@ -24,10 +24,7 @@ app.controller("transactionsCtrl", function($scope, $http, $log, $location, acti
              console.log("transactionsCtrl after transactions.getAll()");
     }
     */
-        
-    //$scope.selectedItemDesc = items.getByItemNo($scope.transactions.transactionItemNo).itemDesc;
-    //$scope.selectedItemDesc = items.getByItemNo(this.transactionItemNo).itemDesc;    
-    
+                
     $scope.selectedItemDesc = function(index) {
       return items.getByItemNo($scope.transactions[index].transactionItemNo).itemDesc;
     };
@@ -35,10 +32,7 @@ app.controller("transactionsCtrl", function($scope, $http, $log, $location, acti
     $scope.selectedItemUom = function(index) {
       return items.getByItemNo($scope.transactions[index].transactionItemNo).itemUom;
     };
-         
-    //$scope.selectedItemDesc = items.getByItemNo($scope.transactions[index].transactionItemNo).itemDesc;
-    //$scope.selectedItemUom = items.getByItemNo($scope.selectedItem).itemUom;
-
+             
 
     // Custom filter function   
     $scope.filterModel = function(transaction) {

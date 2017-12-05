@@ -9,11 +9,9 @@
 		<table class="table table-hover">
 			<tr>
 				<th>Order No.</th>
-				<th>Item No.</th>
-				<!--
+				<th>Item No.</th>				
 				<th>Description</th>
-				<th>Tran. UOM</th>
-				-->
+				<th>UOM</th>				
 				<th>Order Qty</th>
 				<th>Issue Qty</th>
 				<th>Required Date</th>				
@@ -23,6 +21,8 @@
 			<tr ng-repeat="order in orders" ng-click="openOrder($index)">
 				<td>{{order.orderNo}}</td>						
 				<td>{{order.orderItemNo}}</td>
+				<td>{{selectedItemDesc($index)}}</td>	
+				<td>{{selectedItemUom($index)}}</td>
 				<td>{{order.orderQty | number}}</td>
 				<td>{{order.issueQty | number}}</td>
 				<td>{{order.requiredDate | date: "dd/MM/yyyy"}}</td>	
