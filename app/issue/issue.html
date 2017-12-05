@@ -26,27 +26,27 @@
 		
 			<div class="form-group">
 					<label class="control-label col-sm-2" for="uom">UOM:</label>
-					<div class="col-sm-10">
+					<div class="col-sm-5">
 						<input type="text" class="form-control" id="uom" ng-model="selectedItemUom" disabled>							
 					</div>
 			</div>
 		
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="qty">Transaction Qty:</label>
-				<div class="col-sm-10">
+				<div class="col-sm-5">
 					<input type="number" class="form-control" id="qty" placeholder="Enter Quantity" ng-model="transaction.transactionQty" required>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="date">Transaction Date:</label>
-				<div class="col-sm-10">
+				<div class="col-sm-5">
 					<input type="date" class="form-control" id="date" placeholder="Enter Date" ng-model="transaction.transactionDate" required>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
+				<div class="col-sm-offset-2 col-sm-5">
 					<div class="pull-right">
 						<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
 						<button type="submit" class="btn btn-success" ng-click="create()">Create</button>                        
