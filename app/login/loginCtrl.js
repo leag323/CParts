@@ -1,5 +1,17 @@
 /*input data: $scope-email, $scope-password */
 app.controller("loginCtrl", function($scope, $http, $location, activeUser, User) {
+    /*only for test  */
+    /*
+    $scope.email = "ben@ben.com";
+    $scope.password = "buyer123";
+
+    $scope.email = "sam@sam.com";
+    $scope.password = "inv123";
+
+    $scope.email = "avi@avi.com";
+    $scope.password = "wip123";
+    */
+
     $http.get("app/data/users.json").then(function (response) {
         console.log("start loginCtrl input email: " + $scope.email + " input pwd: " + $scope.password);
         $scope.users = [];                
