@@ -63,7 +63,7 @@ app.controller("newItemCtrl", function($scope, $http, $log, $location, activeUse
                 $scope.message = "iten has been created"
                 $scope.validationError = false;    
                 $scope.errorMessage = "";
-                $scope.item = "";
+                $scope.item = {};
                 //$location.path("/main");
         }
         
