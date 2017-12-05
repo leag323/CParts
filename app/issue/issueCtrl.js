@@ -21,21 +21,17 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
              $scope.items = items.getAll();
              console.log("catalogCtrl after items.getAll()");
              }  
-
+    $scope.currentDate = new Date();    
+    $scope.errorMessage = "";
+    $scope.inputDate = "";
+    $scope.itemIndex  = "";                
+    $scope.message = "";
     $scope.selectedItemDesc = "";
     $scope.selectedItemUom = "";
-    $scope.selectedItemSoh = "";
-    $scope.itemIndex  = "";   
-    $scope.transaction = new Transaction({});      
-    $scope.currentDate = new Date();    
-    $scope.inputDate = "";
-
-    $scope.validationError = false;      
-    $scope.errorMessage = "";
-
-    $scope.validationCreate = false;
-    $scope.message = "";
-    
+    $scope.selectedItemSoh = "";    
+    $scope.transaction = new Transaction({});              
+    $scope.validationCreate = false; /* true show alert-success */
+    $scope.validationError = false;  /* true show alert-danger*/                
 
     $scope.itemSelected = function() {
         $scope.selectedItemDesc = items.getByItemNo($scope.selectedItem).itemDesc;
@@ -58,18 +54,26 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
 
     $scope.create = function () {        
         $scope.inputDate = new Date($scope.transaction.transactionDate)           
-        if ($scope.transaction.transactionQty === undefined){
+        if ($scope.selectedItem === undefined){
             $scope.validationError = true;
             $scope.errorMessage = "Item Number is required";  
             $scope.validationCreate = false;                            
+        } else if ($scope.transaction.transactionQty === undefined){
+                   $scope.validationError = true;
+                   $scope.errorMessage = "transaction quantity is required";  
+                   $scope.validationCreate = false;   
         } else if ($scope.transaction.transactionQty <= 0) {
                    $scope.validationError = true;
                    $scope.errorMessage = "in issue transaction quantity must be great than 0";
-                   $scope.validationCreate = false;  
+                   $scope.validationCreate = false;                     
         } else if ($scope.transaction.transactionQty > $scope.selectedItemSoh) {
                    $scope.validationError = true;
                    $scope.errorMessage = "issue quantity is great than stock on hand :" + $scope.selectedItemSoh;
                    $scope.validationCreate = false;  
+        } else if ($scope.transaction.transactionDate === undefined) {
+                    $scope.validationError = true;
+                    $scope.errorMessage = "transaction date is required";
+                    $scope.validationCreate = false;  
         } else if ($scope.inputDate > $scope.currentDate) {
                    $scope.validationError = true;
                    $scope.errorMessage = "transaction date can not be in future";
