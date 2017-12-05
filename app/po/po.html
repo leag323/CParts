@@ -20,7 +20,7 @@
 				<th>Order Status</th>				
 			</tr>
 			
-			<tr ng-repeat="order in orders">
+			<tr ng-repeat="order in orders" ng-click="openOrder($index)">
 				<td>{{order.orderNo}}</td>						
 				<td>{{order.orderItemNo}}</td>
 				<td>{{order.orderQty | number}}</td>

@@ -21,4 +21,11 @@ app.controller("poCtrl", function($scope, $http, $log, $location, activeUser, or
             console.log("poCtrl after orders.getAll()");
    }
 
+   // for role: buyer enable to open order detail for role: storekeeper, wip disabled
+   $scope.openOrder = function (index) {                                      
+        if (activeUser.isBuyer()) {            
+            $location.path("/po/" + index)
+        }   
+    }
+
 });

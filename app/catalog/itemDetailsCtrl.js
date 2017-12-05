@@ -27,9 +27,7 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
     $scope.message = "";
     // Creating a copy of the item object so changes won't be reflected on the array
 
-    $scope.item = new Item(items.getById($routeParams.index));
-    console.log("itemDetailCtrl $routeParams.index: " + $routeParams.index);
-    console.log("itemDetailCtrl $routeParams.index: " + $scope.item);
+    $scope.item = new Item(items.getById($routeParams.index));        
 
     $scope.cancel = function() {
         console.log("itemDetailCtrl cancel");

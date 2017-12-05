@@ -24,20 +24,18 @@ app.controller("transactionsCtrl", function($scope, $http, $log, $location, acti
              console.log("transactionsCtrl after transactions.getAll()");
     }
     */
-    
-    $scope.selectedItemDesc = "desc";
+        
     //$scope.selectedItemDesc = items.getByItemNo($scope.transactions.transactionItemNo).itemDesc;
-    //$scope.selectedItemDesc = items.getByItemNo(this.transactionItemNo).itemDesc;
-    $scope.selectedItemUom = "uom";
-    /*
-    $scope.selectedItemDesc = function() {
-      return items.getByItemNo($scope.transactions.transactionItemNo).itemDesc;
+    //$scope.selectedItemDesc = items.getByItemNo(this.transactionItemNo).itemDesc;    
+    
+    $scope.selectedItemDesc = function(index) {
+      return items.getByItemNo($scope.transactions[index].transactionItemNo).itemDesc;
     };
-    */
-    /*
-    $scope.selectedItemDesc = function() {
-      return items.getByItemNo(this.transactionItemNo).itemDesc;
-      */  
+
+    $scope.selectedItemUom = function(index) {
+      return items.getByItemNo($scope.transactions[index].transactionItemNo).itemUom;
+    };
+         
     //$scope.selectedItemDesc = items.getByItemNo($scope.transactions[index].transactionItemNo).itemDesc;
     //$scope.selectedItemUom = items.getByItemNo($scope.selectedItem).itemUom;
 
