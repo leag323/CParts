@@ -10,7 +10,7 @@ app.controller("catalogCtrl", function($scope, $http, $log, $location, activeUse
     
     $scope.items = items.getAll();  
      // Making sure that we are only loading once
-     /* move read catalog file to catalog.json
+     /* read catalog data
     console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
     if (items.getAll().length === 0) {
         $scope.items = [];                

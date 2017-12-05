@@ -5,7 +5,9 @@ app.controller("transactionsCtrl", function($scope, $http, $log, $location, acti
         return;
     }  
 
-     // Making sure that we are only loading once     
+    $scope.transactions = transactions.getAll(); 
+    // Making sure that we are only loading once     
+    /*
      if (transactions.getAll().length === 0) {
          $scope.transactions = [];                
          $http.get(activeUser.get().transactionsData).then(function mySuccess(response) {
@@ -21,7 +23,8 @@ app.controller("transactionsCtrl", function($scope, $http, $log, $location, acti
              $scope.transactions = transactions.getAll();
              console.log("transactionsCtrl after transactions.getAll()");
     }
-
+    */
+    
     $scope.selectedItemDesc = "desc";
     //$scope.selectedItemDesc = items.getByItemNo($scope.transactions.transactionItemNo).itemDesc;
     //$scope.selectedItemDesc = items.getByItemNo(this.transactionItemNo).itemDesc;
