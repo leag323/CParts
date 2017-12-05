@@ -26,7 +26,9 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
     $scope.selectedItemUom = "";
     $scope.selectedItemSoh = "";
     $scope.itemIndex  = "";   
-    $scope.transaction = new Transaction({});                
+    $scope.transaction = new Transaction({});      
+    $scope.currentDate = new Date();    
+    $scope.inputDate = "";
 
     $scope.validationError = false;      
     $scope.errorMessage = "";
@@ -55,10 +57,11 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
     }
 
     $scope.create = function () {        
+        $scope.inputDate = new Date($scope.transaction.transactionDate)           
         if ($scope.transaction.transactionQty === undefined){
             $scope.validationError = true;
             $scope.errorMessage = "Item Number is required";  
-            $scope.validationCreate = false;                  
+            $scope.validationCreate = false;                            
         } else if ($scope.transaction.transactionQty <= 0) {
                    $scope.validationError = true;
                    $scope.errorMessage = "in issue transaction quantity must be great than 0";
@@ -66,6 +69,10 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
         } else if ($scope.transaction.transactionQty > $scope.selectedItemSoh) {
                    $scope.validationError = true;
                    $scope.errorMessage = "issue quantity is great than stock on hand :" + $scope.selectedItemSoh;
+                   $scope.validationCreate = false;  
+        } else if ($scope.inputDate > $scope.currentDate) {
+                   $scope.validationError = true;
+                   $scope.errorMessage = "transaction date can not be in future";
                    $scope.validationCreate = false;  
         } else {
                 $scope.transaction.transactionType = "Issue";
