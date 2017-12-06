@@ -34,5 +34,16 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
         console.log("poDetailCtrl cancel");
         $location.path("/po");        
     }
-      
+    
+    $scope.cancel = function() {        
+        $location.path("/po");        
+    }
+
+    $scope.update = function() {        
+        $location.path("/catalog");        
+    }
+
+    $scope.remove = function() {        
+        $location.path("/catalog");        
+    }
 });

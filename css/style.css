@@ -13,5 +13,9 @@
 }
 
 .main-column {
-    height: 375px;
+    height: 450px;
+}
+
+.main-img {
+    height: 190px;
 }
