@@ -82,14 +82,25 @@
 					<div class="pull-right">
 						<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
 						<button type="button" class="btn btn-success" ng-click="update()">Update</button>
-						<button type="button" class="btn btn-danger" ng-click="remove()" ng-show="isBuyer()">Delete</button>
+						<button type="button" class="btn btn-danger" ng-click="remove()" >Delete</button>
 					</div> <!-- end div class="pull-right" -->
 				</div> <!-- end div class="col-sm-offset-2 col-sm-10" -->
 			</div> <!-- end div class="form-group" -->		
-			
+
 		</form>
 	</div> <!-- end div class="col-xs-12 col-sm-8 col-md-8 col-lg-8"-->
-	
-	
+		
+</div>
+
+<div class="container">
+	<div class="alert alert-success" ng-show="validationUpdate">
+		<strong>Success!</strong>
+		{{message}}
+	  </div>		
+
+	<div class="alert alert-danger" ng-show="validationError">
+		  <strong>Error!</strong>
+		  {{errorMessage}}
+	</div>
 </div>
 
