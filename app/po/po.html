@@ -4,6 +4,22 @@
 	<div class="page-header">
 		<h1>Purchase Orders</h1>        			
 	</div>
+	<form class="form-inline">
+		<div class="form-group">
+        	<label for="sear" >Search:</label>	         				
+			<input type="text" id="sear" ng-model="query" />																							
+		</div>
+			<!--
+		<div class="form-group">
+        	<label for="sel" >Order By:</label>			
+        	<select id="sel" ng-model="orderProp">		
+            	<option value="itemNo">Item No.</option>
+				<option value="itemDesc">Item Desc</option>			
+				<option value="itemLocation">Item Location</option>			
+			</select>					
+		-->
+		</div>		
+	</form>	
 
 	<div class="table-responsive">
 		<table class="table table-hover">
@@ -18,7 +34,7 @@
 				<th>Order Status</th>				
 			</tr>
 			
-			<tr ng-repeat="order in orders" ng-click="openOrder($index)">
+			<tr ng-repeat="order in orders | filter : filterModel" ng-click="openOrder($index)">
 				<td>{{order.orderNo}}</td>						
 				<td>{{order.orderItemNo}}</td>
 				<td>{{selectedItemDesc($index)}}</td>	

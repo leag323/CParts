@@ -38,4 +38,21 @@ app.controller("poCtrl", function($scope, $http, $log, $location, activeUser, it
         }   
     }
 
+    // Custom filter function   
+    $scope.filterModel = function(orders) {
+        if ($scope.query == undefined || $scope.query === "") {
+          return true;
+        } 
+        
+        var queryLowerCase = $scope.query.toLowerCase();
+        var orderNo = orders.orderNo.toLowerCase();        
+        var orderItemNo = orders.orderItemNo.toLowerCase();                
+        
+        if (orderNo.includes(queryLowerCase) ||                    
+            orderItemNo.includes(queryLowerCase)) {
+          return true;
+        } else {
+          return false;
+        }
+      }        
 });
