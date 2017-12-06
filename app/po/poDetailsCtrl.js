@@ -19,14 +19,15 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
     // Creating a copy of the order object so changes won't be reflected on the array
 
     $scope.order = new Order(orders.getById($routeParams.index)); 
-    $scope.orderBeforeUpdate = new Order(orders.getById($routeParams.index)); ; 
+    //$scope.orderBeforeUpdate = new Order(orders.getById($routeParams.index)); ; 
     console.log("** poDetailCtrl after new Order " + $scope.order.orderNo + " status: " + $scope.order.orderStatus); 
-    //console.log("** poDetailCtrl before update Order " + $scope.orderBeforeUpdate.orderNo + " status: " + $scope.orderBeforepdate.orderStatus); 
+    //console.log("** poDetailCtrl before update Order " + $scope.orderBeforeUpdate.orderNo + " status: " + $scope.orderBeforeUpdate.orderStatus); 
+
     $scope.selectedReqDate = new Date("1950-01-01");
         
     /*
     $scope.selectedReqDate = function() {
-        return new Date(order.requiredDate)
+        return new Date($scope.order.requiredDate)
     };
     */
     //console.log("*** " +  $routeParams.index);
@@ -39,8 +40,8 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
     }
 
     $scope.update = function() {        
-        console.log("update orderqty: " + $scope.order.orderNo + " status: " + $scope.order.orderStatus);      
-        if  ($scope.orderBeforeUpdate.orderStatus = "Closed") {       
+        //console.log("update orderqty: " + $scope.order.orderNo + " status: " + $scope.order.orderStatus);      
+        if  ($scope.order.orderStatus === "Closed") {       
             $scope.validationError = true;
             $scope.errorMessage = "Can not update PO becase PO status is Closed";
             $scope.validationUpdate = false;
@@ -50,7 +51,7 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
                 $scope.message = "Purchase otder has been updated"
                 $scope.validationError = false;
                 errorMessage = "";
-                ordes.update($routeParams.index, $scope.order);
+                orders.update($routeParams.index, $scope.order);
         }
     }
 

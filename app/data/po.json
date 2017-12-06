@@ -14,5 +14,13 @@
         "issueQty": 700,       
         "requiredDate": "2017-12-30",
         "orderStatus": "Partially issued"
+    },
+    {             
+        "orderNo": "45012005560",
+        "orderItemNo": "B 000100003",
+        "orderQty": 2000,      
+        "issueQty": 0,       
+        "requiredDate": "2018-01-30",
+        "orderStatus": "Created"
     }
 ]

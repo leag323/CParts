@@ -16,5 +16,14 @@
         "itemMaxQty": 1200,
         "itemLocation": "A10/020",
         "itemSoh": 200
+    },
+    {
+        "itemNo": "B 000100003",
+        "itemDesc": "Nut Mechanism",
+        "itemUom": "EACH",
+        "itemMinQty": 700,
+        "itemMaxQty": 3200,
+        "itemLocation": "A11/030",
+        "itemSoh": 0
     }
 ]
