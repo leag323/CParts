@@ -19,7 +19,9 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
     // Creating a copy of the order object so changes won't be reflected on the array
 
     $scope.order = new Order(orders.getById($routeParams.index)); 
+    $scope.orderBeforeUpdate = new Order(orders.getById($routeParams.index)); ; 
     console.log("** poDetailCtrl after new Order " + $scope.order.orderNo + " status: " + $scope.order.orderStatus); 
+    //console.log("** poDetailCtrl before update Order " + $scope.orderBeforeUpdate.orderNo + " status: " + $scope.orderBeforepdate.orderStatus); 
     $scope.selectedReqDate = new Date("1950-01-01");
         
     /*
@@ -37,11 +39,22 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
     }
 
     $scope.update = function() {        
-        $location.path("/catalog");        
+        console.log("update orderqty: " + $scope.order.orderNo + " status: " + $scope.order.orderStatus);      
+        if  ($scope.orderBeforeUpdate.orderStatus = "Closed") {       
+            $scope.validationError = true;
+            $scope.errorMessage = "Can not update PO becase PO status is Closed";
+            $scope.validationUpdate = false;
+            $scope.message = "";
+        } else {
+                $scope.validationUpdate = true;
+                $scope.message = "Purchase otder has been updated"
+                $scope.validationError = false;
+                errorMessage = "";
+                ordes.update($routeParams.index, $scope.order);
+        }
     }
 
-    $scope.remove = function() {   
-        console.log("remove orderqty: " + $scope.order.orderNo + " status: " + $scope.order.orderStatus);      
+    $scope.remove = function() {           
         if  ($scope.order.orderStatus === "Created") {
              orders.removeByID($routeParams.index);
              $location.path("/po");    
