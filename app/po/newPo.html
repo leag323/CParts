@@ -45,9 +45,9 @@
 			</div>
 
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="reqdate">Required Date:</label>
+				<label class="control-label col-sm-2" for="date">Required Date:</label>
 				<div class="col-sm-5">
-					<input type="date" class="form-control" id="reqdate" placeholder="Enter Date" ng-model="order.requiredDate" required>
+					<input type="date" class="form-control" id="date" placeholder="yyyy-MM-dd" ng-model="order.requiredDate" required>
 				</div>
 			</div>
 
@@ -64,7 +64,7 @@
 </div>
 
 <div class="container">
-	<div class="alert alert-success" ng-show="validationUpdate">
+	<div class="alert alert-success" ng-show="validationCreate">
 		<strong>Success!</strong>
 		{{message}}
 	  </div>		

@@ -5,6 +5,11 @@
 app.controller("navCtrl", function($scope, $log, $location, activeUser) {
     console.log("start navCtrl");
 
+    if (!activeUser.isLoggedIn()) {
+        $location.path("/");
+        return;
+    }  
+    
     $scope.isLoggedIn = function() {
         return activeUser.isLoggedIn();
     };    
