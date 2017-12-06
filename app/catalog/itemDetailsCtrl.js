@@ -20,11 +20,12 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
     $scope.isStorekeeper = function() {        
         return activeUser.isStorekeeper();
     };      
-    
-    $scope.validationError = false;
-    $scope.errorMessage = "";
-    $scope.validationUpdate = false;
+        
+    $scope.errorMessage = "";    
     $scope.message = "";
+    $scope.validationError = false; /* true show alert-danger */
+    $scope.validationUpdate = false; /* true show alert-success */
+    
     // Creating a copy of the item object so changes won't be reflected on the array
 
     $scope.item = new Item(items.getById($routeParams.index));        
@@ -34,19 +35,17 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
     }
 
     $scope.update = function() {                
-        if ($scope.item.itemMinQty >= $scope.item.itemMaxQty){
-            //window.alert("Maximum Qty must be great than Minimum Qty ");
+        if ($scope.item.itemMinQty >= $scope.item.itemMaxQty){            
             $scope.validationError = true;
             $scope.errorMessage = "Maximum Qty must be great than Minimum Qty";
             $scope.validationUpdate = false;
-            $scope.message = "";
+            $scope.message = "";            
         } else {
                 $scope.validationUpdate = true;
                 $scope.message = "Item has been updated"
                 $scope.validationError = false;
                 errorMessage = "";
-                items.update($routeParams.index, $scope.item);
-                //$location.path("/catalog");
+                items.update($routeParams.index, $scope.item);                
         }
         
     }
