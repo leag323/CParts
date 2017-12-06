@@ -3,19 +3,11 @@ app.controller("poCtrl", function($scope, $http, $log, $location, activeUser, it
     if (!activeUser.isLoggedIn()) {
         $location.path("/");
         return;
-    }  
+    }      
 
-    //$scope.selectedItemDesc = "Desc";
-    //$scope.selectedItemUom = "UOM";
-
-    $scope.selectedItemDesc = function(index) {
-        return items.getByItemNo($scope.orders[index].orderItemNo).itemDesc;
-      };
-  
-    $scope.selectedItemUom = function(index) {
-        return items.getByItemNo($scope.orders[index].orderItemNo).itemUom;
-      };
-    // Making sure that we are only loading once     
+    $scope.orders = orders.getAll();                                                   
+    // Making sure that we are only loading once   
+    /*  
     if (orders.getAll().length === 0) {
         $scope.orders = [];                
         $http.get(activeUser.get().poData).then(function mySuccess(response) {       
@@ -30,8 +22,16 @@ app.controller("poCtrl", function($scope, $http, $log, $location, activeUser, it
             $scope.orders = orders.getAll();
             console.log("poCtrl after orders.getAll()");
    }
-
+*/
    // for role: buyer enable to open order detail for role: storekeeper, wip disabled
+   $scope.selectedItemDesc = function(index) {
+        return items.getByItemNo($scope.orders[index].orderItemNo).itemDesc;
+    };
+
+    $scope.selectedItemUom = function(index) {
+        return items.getByItemNo($scope.orders[index].orderItemNo).itemUom;
+    };
+    
    $scope.openOrder = function (index) {                                      
         if (activeUser.isBuyer()) {            
             $location.path("/po/" + index)
