@@ -8,8 +8,10 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
         $location.path("/");
         return;
     }    
-    
+
+    $scope.currentDate = new Date();  
     $scope.errorMessage = "";
+    $scope.inputDate = "";
     $scope.message = "";
     $scope.selectedItemDesc = "";    
     $scope.selectedItemUom = "";
@@ -18,10 +20,7 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
     
     // Creating a copy of the order object so changes won't be reflected on the array
 
-    $scope.order = new Order(orders.getById($routeParams.index)); 
-    //$scope.orderBeforeUpdate = new Order(orders.getById($routeParams.index)); ; 
-    console.log("** poDetailCtrl after new Order " + $scope.order.orderNo + " status: " + $scope.order.orderStatus);     
-        
+    $scope.order = new Order(orders.getById($routeParams.index));                 
     /*
     $scope.selectedReqDate = function() {
         return new Date($scope.order.requiredDate)
@@ -36,6 +35,7 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
 
     $scope.update = function() {        
         //console.log("update orderqty: " + $scope.order.orderNo + " status: " + $scope.order.orderStatus);      
+        $scope.inputDate = new Date($scope.order.requiredDate)  
         if  ($scope.order.orderStatus === "Closed") {       
             $scope.validationError = true;
             $scope.errorMessage = "Can not update PO because PO status is Closed";
@@ -51,6 +51,11 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
                     $scope.errorMessage = "Purchase Order Quantity can not be zero";
                     $scope.validationUpdate = false;
                     $scope.message = "";
+        } else if ($scope.inputDate < $scope.currentDate) {
+                   $scope.validationError = true;
+                   $scope.errorMessage = "Required date can not be in past";
+                   $scope.validationUpdate = false;
+                   $scope.message = "";
         } else {
                 $scope.validationUpdate = true;
                 $scope.message = "Purchase otder has been updated"

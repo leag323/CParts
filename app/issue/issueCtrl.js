@@ -83,9 +83,9 @@ app.controller("issueCtrl", function($scope, $http, $log, $location, activeUser,
                 $scope.transaction.transactionItemNo = $scope.selectedItem;
                 $scope.transaction.transactionQty = $scope.transaction.transactionQty * (-1);
                 transactions.add($scope.transaction);                  
-                console.log("1 before update $scope:itemIndex " + $scope.itemIndex);
-                console.log("2 before update $scope.selectedItemSoh " + $scope.selectedItemSoh);
-                console.log("3 before update $scope.transaction.transactionQty " + $scope.transaction.transactionQty);                
+                //console.log("1 before update $scope:itemIndex " + $scope.itemIndex);
+                //console.log("2 before update $scope.selectedItemSoh " + $scope.selectedItemSoh);
+                //console.log("3 before update $scope.transaction.transactionQty " + $scope.transaction.transactionQty);                
                 items.updateItemSoh($scope.itemIndex, ($scope.selectedItemSoh + $scope.transaction.transactionQty));
                 $scope.validationCreate = true;  
                 //items.update($routeParams.index, $scope.item);
