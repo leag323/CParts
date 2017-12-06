@@ -29,13 +29,11 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
 
     $scope.item = new Item(items.getById($routeParams.index));        
 
-    $scope.cancel = function() {
-        console.log("itemDetailCtrl cancel");
+    $scope.cancel = function() {        
         $location.path("/catalog");        
     }
 
-    $scope.update = function() {        
-        console.log($scope.item.itemNo + " " + $scope.item.itemMinQty + " " + $scope.item.itemMaxQty);        
+    $scope.update = function() {                
         if ($scope.item.itemMinQty >= $scope.item.itemMaxQty){
             //window.alert("Maximum Qty must be great than Minimum Qty ");
             $scope.validationError = true;
@@ -54,7 +52,14 @@ app.controller("itemDetailsCtrl", function($scope, $log, $location, $routeParams
     }
 
     $scope.remove = function() {
-        items.removeByID($routeParams.index);
-        $location.path("/catalog");
+        if (!isNaN($scope.item.itemSoh)) {            
+            $scope.validationError = true;
+            $scope.errorMessage = "Item has Stock on hand can not remove it";
+            $scope.validationUpdate = false;
+            $scope.message = "";
+        } else {
+                items.removeByID($routeParams.index);
+                $location.path("/catalog");
+        }
     }
 });
