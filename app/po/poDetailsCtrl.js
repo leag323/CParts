@@ -20,16 +20,13 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
 
     $scope.order = new Order(orders.getById($routeParams.index)); 
     //$scope.orderBeforeUpdate = new Order(orders.getById($routeParams.index)); ; 
-    console.log("** poDetailCtrl after new Order " + $scope.order.orderNo + " status: " + $scope.order.orderStatus); 
-    //console.log("** poDetailCtrl before update Order " + $scope.orderBeforeUpdate.orderNo + " status: " + $scope.orderBeforeUpdate.orderStatus); 
+    console.log("** poDetailCtrl after new Order " + $scope.order.orderNo + " status: " + $scope.order.orderStatus);     
         
     /*
     $scope.selectedReqDate = function() {
         return new Date($scope.order.requiredDate)
     };
-    */
-    //console.log("*** " +  $routeParams.index);
-    
+    */        
     $scope.selectedItemDesc = items.getByItemNo($scope.order.orderItemNo).itemDesc;
     $scope.selectedItemUom = items.getByItemNo($scope.order.orderItemNo).itemUom;
     
@@ -41,9 +38,19 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
         //console.log("update orderqty: " + $scope.order.orderNo + " status: " + $scope.order.orderStatus);      
         if  ($scope.order.orderStatus === "Closed") {       
             $scope.validationError = true;
-            $scope.errorMessage = "Can not update PO becase PO status is Closed";
+            $scope.errorMessage = "Can not update PO because PO status is Closed";
             $scope.validationUpdate = false;
             $scope.message = "";
+        } else if  ($scope.order.orderQty < 0) {       
+                    $scope.validationError = true;
+                    $scope.errorMessage = "Purchase Order Quantity can not be negative";
+                    $scope.validationUpdate = false;
+                    $scope.message = "";
+        } else if  ($scope.order.orderQty === 0) {       
+                    $scope.validationError = true;
+                    $scope.errorMessage = "Purchase Order Quantity can not be zero";
+                    $scope.validationUpdate = false;
+                    $scope.message = "";
         } else {
                 $scope.validationUpdate = true;
                 $scope.message = "Purchase otder has been updated"
