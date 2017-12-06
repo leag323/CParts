@@ -22,8 +22,6 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
     //$scope.orderBeforeUpdate = new Order(orders.getById($routeParams.index)); ; 
     console.log("** poDetailCtrl after new Order " + $scope.order.orderNo + " status: " + $scope.order.orderStatus); 
     //console.log("** poDetailCtrl before update Order " + $scope.orderBeforeUpdate.orderNo + " status: " + $scope.orderBeforeUpdate.orderStatus); 
-
-    $scope.selectedReqDate = new Date("1950-01-01");
         
     /*
     $scope.selectedReqDate = function() {
