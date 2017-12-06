@@ -9,11 +9,30 @@ app.controller("newPoCtrl", function($scope, $log, $location, $routeParams, acti
         return;
     }    
     
+    // Making sure that we are only loading once
+    console.log("catalogCtrl items.getAll().length: " + items.getAll().length);
+    if (items.getAll().length === 0) {
+        $scope.items = [];                
+        $http.get(activeUser.get().catalogData).then(function mySuccess(response) {
+            console.log("success open file catalog.json");                
+            items.load(response.data);                           
+            $scope.items = items.getAll();                                                   
+        },  function myError(response) {
+            console.log("error open file catalog.json");
+        });
+    
+    } else {console.log("catalogCtrl items.getAll().length !=0");
+            $scope.items = items.getAll();
+            console.log("catalogCtrl after items.getAll()");
+            }  
+            
     $scope.errorMessage = "";
     $scope.message = "";
+    $scope.order = new Order({});  
     $scope.selectedItemDesc = "";    
     $scope.selectedItemUom = "";
     $scope.validationError = false;    
-    $scope.validationUpdate = false;    
+    $scope.validationCreate = false; /* true show alert-success */
+    $scope.validationUpdate = false; /* true show alert-danger*/  
     
 });

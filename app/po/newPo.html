@@ -10,6 +10,20 @@
 		<h2>Purchase Order No: {{order.orderNo}} </h2>   			
 		-->
 	</div>
+
+	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+		<form class="form-horizontal">
+			
+			<div class="form-group"	>
+				<label class="control-label col-sm-2" for="itemno">Item No:</label>
+				<div class="col-sm-10">
+					<select id="itemno" ng-model="selectedItem" ng-change="itemSelected()">
+						<option ng-repeat="item in items" value="{{item.itemNo}}">{{item.itemNo}}</option>
+					</select>
+				</div>
+			</div>						
+		</form>
+	</div>
 </div>
 
 <div class="container">

@@ -13,8 +13,8 @@ app.controller("poDetailsCtrl", function($scope, $log, $location, $routeParams, 
     $scope.message = "";
     $scope.selectedItemDesc = "";    
     $scope.selectedItemUom = "";
-    $scope.validationError = false;    
-    $scope.validationUpdate = false;    
+    $scope.validationError = false;    /* true show alert-danger*/  
+    $scope.validationUpdate = false;   /* true show alert-success*/  
     
     // Creating a copy of the order object so changes won't be reflected on the array
 
