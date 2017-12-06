@@ -22,6 +22,43 @@
 					</select>
 				</div>
 			</div>						
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="desc">Description:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="desc" ng-model="selectedItemDesc" disabled>
+					</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="uom">UOM:</label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="uom" ng-model="selectedItemUom" disabled>							
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="orderqty">Order Qty:</label>
+				<div class="col-sm-5">
+					<input type="number" class="form-control" id="orderqty" placeholder="Enter Order Quantity" ng-model="order.orderQty" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="reqdate">Required Date:</label>
+				<div class="col-sm-5">
+					<input type="date" class="form-control" id="reqdate" placeholder="Enter Date" ng-model="order.requiredDate" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-5">
+					<div class="pull-right">
+						<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+						<button type="submit" class="btn btn-success" ng-click="create()">Create</button>                        
+					</div>
+				</div>
+			</div>
 		</form>
 	</div>
 </div>

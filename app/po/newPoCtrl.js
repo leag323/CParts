@@ -25,7 +25,7 @@ app.controller("newPoCtrl", function($scope, $log, $location, $routeParams, acti
             $scope.items = items.getAll();
             console.log("catalogCtrl after items.getAll()");
             }  
-            
+
     $scope.errorMessage = "";
     $scope.message = "";
     $scope.order = new Order({});  
@@ -35,4 +35,17 @@ app.controller("newPoCtrl", function($scope, $log, $location, $routeParams, acti
     $scope.validationCreate = false; /* true show alert-success */
     $scope.validationUpdate = false; /* true show alert-danger*/  
     
+    $scope.itemSelected = function() {
+        $scope.selectedItemDesc = items.getByItemNo($scope.selectedItem).itemDesc;
+        $scope.selectedItemUom = items.getByItemNo($scope.selectedItem).itemUom;        
+        $scope.itemIndex = items.getIndexByItemNo($scope.selectedItem);                    
+    }
+
+    $scope.cancel = function () {
+        $location.path("/main");
+    }
+
+    $scope.create = function () {
+        $location.path("/main");
+    }
 });
