@@ -1,6 +1,7 @@
 
 app.factory("orders", function(Order) {
     var ordersArr = [];
+    var counter = 45012005560;
 
     var getAll = function() {
         return ordersArr;
@@ -34,9 +35,16 @@ app.factory("orders", function(Order) {
     }
 
     var getNewPoNumber = function() {
-        var counter = 100;
-        return counter;
+        return ++counter;
     }
+
+    /*
+    var getNewPoNumber = (function() {
+        //var counter = 45012005560;
+        return function() 
+                {return (counter = counter + 1)};
+    }) ();
+    */
     return {
         getAll: getAll,
         getById: getById,                       

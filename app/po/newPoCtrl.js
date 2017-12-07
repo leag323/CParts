@@ -80,8 +80,9 @@ app.controller("newPoCtrl", function($scope, $log, $location, $routeParams, acti
                    $scope.validationCreate = false;       
         } else {
                     console.log("6 newPOctrl before create");
-                    $scope.order.orderNo = orders.getNewPoNumber() //"45012005561"
+                    $scope.order.orderNo = orders.getNewPoNumber(); //"45012005561"
                     console.log("new po no: " + orders.getNewPoNumber());
+                    console.log("new po no: " + orders.getNewPoNumber);
                     $scope.order.orderItemNo = $scope.selectedItem;
                     $scope.order.issueQty = 0;
                     $scope.order.orderStatus = "Created";
