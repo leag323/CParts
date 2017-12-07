@@ -79,8 +79,17 @@ app.controller("newPoCtrl", function($scope, $log, $location, $routeParams, acti
                    $scope.errorMessage = "required date can not be in past";
                    $scope.validationCreate = false;       
         } else {
-                    console.log("6 newPOctrl before return to /main");
-                    $location.path("/main"); 
+                    console.log("6 newPOctrl before create");
+                    $scope.order.orderNo = "45012005561"
+                    $scope.order.orderItemNo = $scope.selectedItem;
+                    $scope.order.issueQty = 0;
+                    $scope.order.orderStatus = "Created";
+                    orders.add($scope.order);  
+                    $scope.validationCreate = true; 
+                    $scope.message = "Purchase Order has been created"
+                    $scope.validationError = false;    
+                    $scope.errorMessage = "";
+                    //$location.path("/main"); 
         }
     }
 
