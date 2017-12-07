@@ -6,7 +6,7 @@
         "itemMinQty": 1000,
         "itemMaxQty": 2000,
         "itemLocation": "A10/001",
-        "itemSoh": 1000
+        "itemSoh": 450
     },
     {
         "itemNo": "B 000100002",
@@ -15,7 +15,7 @@
         "itemMinQty": 500,
         "itemMaxQty": 1200,
         "itemLocation": "A10/020",
-        "itemSoh": 200
+        "itemSoh": 700
     },
     {
         "itemNo": "B 000100003",
