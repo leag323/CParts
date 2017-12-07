@@ -33,6 +33,10 @@ app.factory("orders", function(Order) {
         }
     }
 
+    var getNewPoNumber = function() {
+        var counter = 100;
+        return counter;
+    }
     return {
         getAll: getAll,
         getById: getById,                       
@@ -40,6 +44,7 @@ app.factory("orders", function(Order) {
         update: update,        
         removeAll: removeAll,
         removeByID: removeByID,
-        load: load        
+        load: load,
+        getNewPoNumber: getNewPoNumber     
     }
 })
